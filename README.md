@@ -1,34 +1,106 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Site Paróquia menino Jesus de Praga - Diadema/SP
+
+**Status**: *Em desenvolvimento*.
+
+## Descrição
+
+Recriação do projeto que visa o desenvolvimento de um site, e posteriormente de blog, para a Paróquia Menino Jesus de Praga (Diadema/SP).
+
+## Tabela de conteúdos
+
+## Objetivo
+
+Proporcionar aos fiéis e membros da regional acesso a informações da paróquia através do site institucional da comunidade o qual possua as formas de contato, localização das comunidades, informações relevantes etc. e, também, gerar conteúdo através do blog permitindo a interação e maior proximidade da igreja com seus participantes e não-participantes.
+
+## Etapas e features
+
+As etapas aqui dispostas não necessariamente serão executadas em ordem sequencial.
+
+- [ ] Definição da paleta de cores e tipografia
+- [ ] Prototipação do layout:
+    - [ ] Site insitucional
+    - [ ] Blog
+- [ ] Criação e disponibiliação do style guide básico a ser seguido no desenvolvimento
+- [ ] Escolha das tecnologias e ferramentas:
+    - [x] Site insitucional
+    - [ ] Blog
+- [ ] Diagramação e desenvolvimento do site insitucional
 
 ## Getting Started
 
-First, run the development server:
+### Pré-requisitos
+
+Antes de iniciar o desenvolvimento, tenha certeza de ter instalado em sua máquina o [Node](https://nodejs.org/en/) >= 18.12.1.
+
+### Desenvolvimento
+
+Primeiro, clone o projeto para a sua máquina:
+
+```bash
+git clone https://github.com/Alessandro-Miranda/pmjp.git
+```
+
+Instale as dependências do projeto:
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+Agora já é possível iniciar o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado. Você poderá iniciar a modificação acessando a página que deseja alterar na pasta `src/pages/`.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+[API routes](https://nextjs.org/docs/api-routes/introduction) podem ser acessadas em [http://localhost:3000/api/hello](http://localhost:3000/api/hello). Estes endpoints podem ser editados em `src/pages/api/*`.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+O diretório `src/pages/api` é mapeado como `/api/*`. Arquivos neste diretório são tratados como [API routes](https://nextjs.org/docs/api-routes/introduction) ao invés de páginas React.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Testes
 
-## Learn More
+O projeto contém testes de cada componente da interface e métodos auxiliares.
 
-To learn more about Next.js, take a look at the following resources:
+- `npm test` or `npm t`: executa todos os casos de testes unitários presentes na pasta `__tests__`.
+- `npm test <modulo_componente>.spec.<extensao>`: executa um único caso de teste definido pelo nome do arquivo.
+- `npm run test:watch`: executa todos os casos de teste em modo watch durante o desenvolvimento.
+- `npm run test:cov`: executa todos os casos de testes e gera o relatório de cobertura de código salvando-o na pasta `coverage`. 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `npm run lint`: Faz a verificação do código e correção utilizando como base o arquivo `.eslintrc.json` e deve ser executado antes da realização do build/deploy.
+- `npm run build`: Gera o build das páginas de forma estática para as páginas que usam (ou não) getStaticProps.
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+A ser definido
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Tecnologias e ferramentas
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Sass](https://sass-lang.com/)
+- [ESLint - Airbnb style](https://eslint.org/)
+- [Jest](https://jestjs.io/pt-BR/)
+- [React Testing Library](https://testing-library.com/)
+- [Figma](https://www.figma.com/)
+
+## Licença
+
+O projeto está sob a licença MIT. Você pode consultar o arquio na íntegra [aqui](/LICENSE). 
+
+## Membros do projeto
+
+Lista das partes envolvidas na autoria, criação, desenvolvimento e melhorias do projeto.
+
+### Autoria e desenvolvimento
+
+Nome                           | Contatos           | Responsabilidade
+-------------------------------|--------------------|----------------
+Paróquia Menino Jesus de Praga | [E-mail](mailto:paroquiameninojesus@yahoo.com.br) \| [Telefone](tel:+551140666034) \| [Endereço](https://goo.gl/maps/nHzpZmEBK9MsuPr58) \| [Facebook](https://www.facebook.com/meninojesusdiadema) | Autor e proprietário
+Alessandro Miranda             | [E-mail](mailto:ad.lmiranda2018@gmail.com) \| [GitHub](https://github.com/Alessandro-Miranda) | Layout e Desenvolvimento Full-stack
