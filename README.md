@@ -1,12 +1,27 @@
-# Site Paróquia menino Jesus de Praga - Diadema/SP
+# Site Paróquia Menino Jesus de Praga - Diadema/SP
 
 **Status**: *Em desenvolvimento*.
 
-## Descrição
+## Descrição e observações
 
 Recriação do projeto que visa o desenvolvimento de um site, e posteriormente de blog, para a Paróquia Menino Jesus de Praga (Diadema/SP).
 
+*O guia de estilos utilizado pode ser consultado em [`docs/style-guide.md`](/docs/style-guide.md) e o arquivo do design proposto encontra-se na pasta [`design`](/design/);*
+
 ## Tabela de conteúdos
+
+- [Objetivo](#objetivo)
+- [Etapas e features](#etapas-e-features)
+- [Iniciando](#getting-started)
+    - [Pré-requisitos](#pré-requisitos)
+    - [Desenvolvimento](#desenvolvimento)
+    - [Testes](#testes)
+- [Build](#build)
+- [Deploy](#deploy)
+- [Tecnologias e ferramentas](#tecnologias-e-ferramentas)
+- [Licença](#licença)
+- [Membros do projeto](#membros-do-projeto)
+    - [Autores](#autoria-e-desenvolvimento)
 
 ## Objetivo
 
