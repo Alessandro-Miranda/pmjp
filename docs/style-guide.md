@@ -18,4 +18,22 @@ Textos                 | Open Sans         | 300   | 24px
 
 ## Paleta de cores
 
+Cor                 | Código Hexadecimal
+--------------------|:------------------:
+Rufous-100          | `#d5462c`
+Rufous-500          | `#9C0701`
+Rufous-900          | `#670000`
+Ivory-100           | `#ffffff`
+Ivory-500           | `#f5f9e9` 
+Ivory-900           | `#c2c6b7`
+Sage-100            | `#f5f4d6`
+Sage-500            | `#C2C1A5`
+Sage-900            | `#919176`
+Onyx-100            | `#63686c`
+Onyx-500            | `#393E41`
+Onyx-900            | `#13181b`
+BlackChocolate-100  | `#45423e`
+BlackChocolate-500  | `#1E1B18`
+BlackChocolate-900  | `#000000`
+
 ## Elementos
