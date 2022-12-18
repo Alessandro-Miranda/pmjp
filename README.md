@@ -31,11 +31,11 @@ Proporcionar aos fiéis e membros da regional acesso a informações da paróqui
 
 As etapas aqui dispostas não necessariamente serão executadas em ordem sequencial.
 
-- [ ] Definição da paleta de cores e tipografia
+- [x] Definição da paleta de cores e tipografia
 - [ ] Prototipação do layout:
-    - [ ] Site insitucional
+    - [x] Site insitucional
     - [ ] Blog
-- [ ] Criação e disponibiliação do style guide básico a ser seguido no desenvolvimento
+- [x] Criação e disponibiliação do style guide básico
 - [ ] Escolha das tecnologias e ferramentas:
     - [x] Site insitucional
     - [ ] Blog
