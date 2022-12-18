@@ -117,5 +117,5 @@ Lista das partes envolvidas na autoria, criação, desenvolvimento e melhorias d
 
 Nome                           | Contatos           | Responsabilidade
 -------------------------------|--------------------|----------------
-Paróquia Menino Jesus de Praga | [E-mail](mailto:paroquiameninojesus@yahoo.com.br) \| [Telefone](tel:+551140666034) \| [Endereço](https://goo.gl/maps/nHzpZmEBK9MsuPr58) \| [Facebook](https://www.facebook.com/meninojesusdiadema) | Autor e proprietário
+Paróquia Menino Jesus de Praga | [E-mail](mailto:paroquiameninojesus@yahoo.com.br) \| [Telefone](tel:+551140666034) \| [Endereço](https://goo.gl/maps/nHzpZmEBK9MsuPr58) \| [Facebook](https://www.facebook.com/meninojesusdiadema) | Autoria
 Alessandro Miranda             | [E-mail](mailto:ad.lmiranda2018@gmail.com) \| [GitHub](https://github.com/Alessandro-Miranda) | Layout e Desenvolvimento Full-stack
