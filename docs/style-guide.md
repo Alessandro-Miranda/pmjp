@@ -8,13 +8,13 @@ Definição da família, peso e tamanho das fontes utilizadas em cada tipo de te
 
 *Font-family*: [Yanone Kaffeesatz](https://fonts.google.com/specimen/Yanone+Kaffeesatz?query=Yanone+), [Open Sans](https://fonts.google.com/specimen/Open+Sans?query=Open) e [Suez One](https://fonts.google.com/specimen/Suez+One?query=Suez).
 
-Tipo de texto          | Font-family       | Peso  | Tamanho da fonte
+Tipo de texto          | Font-family       | Peso  | Tamanho da fonte (Desktop/mobile)
 -----------------------|-------------------|:-----:|:---------:
-Título principal (H1)  | Yanone Kaffeesatz | 400   | 72px
+Título principal (H1)  | Yanone Kaffeesatz | 400   | 72px / 42px
 Título secundário (H2) | Yanone Kaffeesatz | 400   | 48px
-Títulos terceiro nível | Yanone Kaffeesatz | 400   | 42px
-Texto decorativo       | Suez One          | 400   | 36px
-Textos                 | Open Sans         | 300   | 24px
+Títulos terceiro nível | Yanone Kaffeesatz | 400   | 42px / 24px
+Títulos de listagem    | Yanone Kaffeesatz | 400   | 36px / 24px
+Textos                 | Open Sans         | 300   | 24px / 18px
 
 ## Paleta de cores
 
