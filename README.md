@@ -6,7 +6,7 @@
 
 Recriação do projeto que visa o desenvolvimento de um site, e posteriormente de blog, para a Paróquia Menino Jesus de Praga (Diadema/SP).
 
-*O guia de estilos utilizado pode ser consultado em [`docs/style-guide.md`](/docs/style-guide.md) e o arquivo do design proposto, tanto mobile quanto desktop, encontram-se na pasta [`design`](/design/);*
+*O guia de estilos utilizado pode ser consultado em [`docs/style-guide.md`](/docs/style-guide.md); o arquivo com informações referentes a contribuição encontra-se na pasta [`docs/collaborator-guide.md`](/docs/collaborator-guide.md); o arquivo do design proposto, tanto mobile quanto desktop, encontram-se na pasta [`design`](/design/);*
 
 ## Tabela de conteúdos
 
