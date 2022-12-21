@@ -99,6 +99,7 @@ A ser definido
 
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Material UI](https://mui.com/)
 - [Sass](https://sass-lang.com/)
 - [ESLint - Airbnb style](https://eslint.org/)
 - [Jest](https://jestjs.io/pt-BR/)
