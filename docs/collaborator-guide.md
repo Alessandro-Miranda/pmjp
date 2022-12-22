@@ -52,7 +52,8 @@ Caso seja uma feature que provoque incompatibilidade com alguma funcionalidade, 
 
 Convenções de commits a serem utilizados.
 
-- `chore`: Mudanças que não afetam o sistema ou arquivos de teste. Exemplo: regras eslint, prettier, .gitignore etc.
+- `assets`: Imagens, ícones e demais assets do projeto;
+- `chore`: Mudanças que não afetam o sistema ou arquivos de teste. Exemplo: regras eslint, prettier, .gitignore etc.;
 - `docs`: Documentações do projeto;
 - `feat`: Introdução de nova funcionalidade;
 - `fix`: Correção de bugs;
