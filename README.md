@@ -6,11 +6,10 @@
 
 Recriação do projeto que visa o desenvolvimento de um site, e posteriormente de blog, para a Paróquia Menino Jesus de Praga (Diadema/SP).
 
-*O guia de estilos utilizado pode ser consultado em [`docs/style-guide.md`](/docs/style-guide.md); o arquivo com informações referentes a contribuição encontra-se na pasta [`docs/collaborator-guide.md`](/docs/collaborator-guide.md); o arquivo do design proposto, tanto mobile quanto desktop, encontram-se na pasta [`design`](/design/);*
-
-## Tabela de conteúdos
+## Conteúdos
 
 - [Objetivo](#objetivo)
+- [Guia de estilos e Design](#guia-de-estilos-e-design)
 - [Etapas e features](#etapas-e-features)
 - [Iniciando](#getting-started)
     - [Pré-requisitos](#pré-requisitos)
@@ -20,12 +19,17 @@ Recriação do projeto que visa o desenvolvimento de um site, e posteriormente d
 - [Deploy](#deploy)
 - [Tecnologias e ferramentas](#tecnologias-e-ferramentas)
 - [Licença](#licença)
+- [Contribuição](#contribuição)
 - [Membros do projeto](#membros-do-projeto)
     - [Autores](#autoria-e-desenvolvimento)
 
 ## Objetivo
 
 Proporcionar aos fiéis e membros da regional acesso a informações da paróquia através do site institucional da comunidade o qual possua as formas de contato, localização das comunidades, informações relevantes etc. e, também, gerar conteúdo através do blog permitindo a interação e maior proximidade da igreja com seus participantes e não-participantes.
+
+## Guia de estilos e Design
+
+O guia de estilos utilizado pode ser consultado em [`docs/style-guide.md`](/docs/style-guide.md); o arquivo do design proposto, tanto mobile quanto desktop, encontram-se na pasta [`design`](/design/);
 
 ## Etapas e features
 
@@ -63,7 +67,7 @@ npm install
 yarn install
 ```
 
-Agora já é possível iniciar o servidor de desenvolvimento:
+Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
@@ -73,7 +77,7 @@ yarn dev
 
 Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado. Você poderá iniciar a modificação acessando a página que deseja alterar na pasta `src/pages/`.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) podem ser acessadas em [http://localhost:3000/api/hello](http://localhost:3000/api/hello). Estes endpoints podem ser editados em `src/pages/api/*`.
+[API routes](https://nextjs.org/docs/api-routes/introduction) podem ser acessadas em [http://localhost:3000/api/<endpoint>](http://localhost:3000/api/<endpoint>). Estes endpoints podem ser editados em `src/pages/api/*`.
 
 O diretório `src/pages/api` é mapeado como `/api/*`. Arquivos neste diretório são tratados como [API routes](https://nextjs.org/docs/api-routes/introduction) ao invés de páginas React.
 
@@ -83,13 +87,13 @@ O projeto contém testes de cada componente da interface e métodos auxiliares.
 
 - `npm test` or `npm t`: executa todos os casos de testes unitários presentes na pasta `__tests__`.
 - `npm test <modulo_componente>.spec.<extensao>`: executa um único caso de teste definido pelo nome do arquivo.
-- `npm run test:watch`: executa todos os casos de teste em modo watch durante o desenvolvimento.
+- `npm run test:watch`: executa os casos de teste durante o desenvolvimento.
 - `npm run test:cov`: executa todos os casos de testes e gera o relatório de cobertura de código salvando-o na pasta `coverage`. 
 
 ## Build
 
 - `npm run lint`: Faz a verificação do código e correção utilizando como base o arquivo `.eslintrc.json` e deve ser executado antes da realização do build/deploy.
-- `npm run build`: Gera o build das páginas de forma estática para as páginas que usam (ou não) getStaticProps.
+- `npm run build`: Gera o build das páginas de forma estática para as páginas que usam (ou não) getStaticProps. *Obs.: Opcional com base na plataforma onde será feito o deploy.*
 
 ## Deploy
 
@@ -108,7 +112,11 @@ A ser definido
 
 ## Licença
 
-O projeto está sob a licença MIT. Você pode consultar o arquio na íntegra [aqui](/LICENSE). 
+O projeto está sob a licença MIT. Você pode consultar o arquio na íntegra [aqui](/LICENSE).
+
+## Contribuição
+
+As informações sobre como contribuir com o desenvolvimento encontram-se no arquivo [collaborator-guide.md](/docs/collaborator-guide.md).
 
 ## Membros do projeto
 
