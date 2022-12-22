@@ -66,8 +66,17 @@ npm install
 # ou
 yarn install
 ```
+O projeto utiliza [Storybook](https://storybook.js.org/), portanto deve-se inicializa-lo - para o desenvolvimento dos componentes visuais de forma isolada - com o seguinte comando:
 
-Inicie o servidor de desenvolvimento:
+```bash
+npm run storybook
+```
+
+Com isso já será possível abrir a página de boas-vindas acessando o endereço [http://localhost:6006](http://localhost:6006) em seu navegador.
+
+*Para maiores detalhes sobre as configurações e uso consulte [Storybook](https://storybook.js.org/).*
+
+Para iniciar o servidor de desenvolvimento utilize o comando
 
 ```bash
 npm run dev
@@ -75,7 +84,7 @@ npm run dev
 yarn dev
 ```
 
-Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado. Você poderá iniciar a modificação acessando a página que deseja alterar na pasta `src/pages/`.
+Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado. Você poderá realizar a modificação necessária acessando a página que deseja alterar na pasta `src/pages/`.
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) podem ser acessadas em [http://localhost:3000/api/<endpoint>](http://localhost:3000/api/<endpoint>). Estes endpoints podem ser editados em `src/pages/api/*`.
 
