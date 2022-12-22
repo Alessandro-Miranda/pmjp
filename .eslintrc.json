@@ -12,9 +12,11 @@
         "plugin:jsx-a11y/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:storybook/recommended",
         "airbnb",
         "airbnb/hooks",
-        "next/core-web-vitals"
+        "next/core-web-vitals",
+        "next"
     ],
     "overrides": [
     ],
