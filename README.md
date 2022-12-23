@@ -112,14 +112,15 @@ A ser definido
 
 ## Tecnologias e ferramentas
 
-- [Next.js](https://nextjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Material UI](https://mui.com/)
-- [Sass](https://sass-lang.com/)
 - [ESLint - Airbnb style](https://eslint.org/)
-- [Jest](https://jestjs.io/pt-BR/)
-- [React Testing Library](https://testing-library.com/)
 - [Figma](https://www.figma.com/)
+- [Jest](https://jestjs.io/pt-BR/)
+- [Next.js](https://nextjs.org/)
+- [Radix UI](https://www.radix-ui.com/)
+- [React Testing Library](https://testing-library.com/)
+- [Sass](https://sass-lang.com/)
+- [Storybook](https://storybook.js.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## Licença
 
