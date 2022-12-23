@@ -1,0 +1,9 @@
+@mixin border {
+    border: 1px solid var(--blackChocolate-500);
+    border-radius: toRem(20);
+    transition: border .2s ease-in-out;
+
+    &:hover {
+        border-color: var(--rufous-500);
+    }
+}
