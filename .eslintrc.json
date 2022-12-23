@@ -1,46 +1,51 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "node": true
-    },
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-        "plugin:react/recommended",
-        "plugin:import/errors",
-        "plugin:import/warnings",
-        "plugin:jsx-a11y/recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:storybook/recommended",
-        "airbnb",
-        "airbnb/hooks",
-        "next/core-web-vitals",
-        "next"
-    ],
-    "overrides": [
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
-    "settings": {
-        "react": {
-            "version": "detect"
-        }
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
-        "linebreak-style": "error",
-        "no-unused-vars": "off",
-        "max-len": ["error", { "code": 100, "ignoreUrls": true }],
-        "@typescript-eslint/no-unused-vars": "error"
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:storybook/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "next/core-web-vitals",
+    "next"
+  ],
+  "overrides": [
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
     }
+  },
+  "settings": {
+    "react": {
+        "version": "detect"
+    }
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+    "linebreak-style": "error",
+    "no-unused-vars": "off",
+    "max-len": ["error", { "code": 100, "ignoreUrls": true }],
+    "object-curly-newline": ["error", {
+        "ImportDeclaration": { "multiline": true, "minProperties": 5 },
+        "ObjectExpression": { "multiline": true, "minProperties": 3 },
+        "ObjectPattern": { "multiline": true, "minProperties": 3 }
+    }],
+    "@typescript-eslint/no-unused-vars": "error"
+  }
 }
