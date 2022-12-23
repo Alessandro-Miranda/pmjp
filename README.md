@@ -86,6 +86,8 @@ yarn dev
 
 Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado. Você poderá realizar a modificação necessária acessando a página que deseja alterar na pasta `src/pages/`.
 
+O projeto utiliza **Path Alias**, portanto, caso seja necessário a criação de um novo path, este deve ser adicionado ao arquivo **tsconfig.json** nas seção **paths**.
+
 [API routes](https://nextjs.org/docs/api-routes/introduction) podem ser acessadas em [http://localhost:3000/api/<endpoint>](http://localhost:3000/api/<endpoint>). Estes endpoints podem ser editados em `src/pages/api/*`.
 
 O diretório `src/pages/api` é mapeado como `/api/*`. Arquivos neste diretório são tratados como [API routes](https://nextjs.org/docs/api-routes/introduction) ao invés de páginas React.
