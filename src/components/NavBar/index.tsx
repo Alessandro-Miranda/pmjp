@@ -1,4 +1,4 @@
-import NavLink from '@Components/NavLink';
+import NavLink from '@Components/NavBar/NavLink';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import MobileTrigger from './MobileTrigger';
 
