@@ -46,6 +46,8 @@
         "ObjectExpression": { "multiline": true, "minProperties": 3 },
         "ObjectPattern": { "multiline": true, "minProperties": 3 }
     }],
+    "import/extensions": ["error", "always", { "tsx": "never", "ts": "never", "js": "never" }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "@typescript-eslint/no-unused-vars": "error"
   }
 }
