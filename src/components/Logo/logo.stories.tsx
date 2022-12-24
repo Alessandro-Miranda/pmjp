@@ -2,7 +2,7 @@ import { ComponentMeta } from '@storybook/react';
 import Logo from './index';
 
 const DEFAULT: ComponentMeta<typeof Logo> = {
-  title: 'Logo',
+  title: 'Componets/Logo',
   component: Logo,
 };
 
