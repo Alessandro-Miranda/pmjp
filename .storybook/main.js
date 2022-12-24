@@ -17,7 +17,9 @@ module.exports = {
   },
   "webpackFinal": async (config) => {
     config.resolve.alias = {
-      "@Logos": '/public'
+      "@Logos": '/public',
+      "@Icons": '/public/icons',
+      "@Components": '/src/components'
     }
 
     return config;

@@ -1,4 +1,5 @@
 import * as NextImage from 'next/image';
+import '../src/sass/main.scss';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
