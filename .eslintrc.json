@@ -19,6 +19,13 @@
     "next"
   ],
   "overrides": [
+    {
+      "files": ["*/**/*.stories.tsx", "stories/*"],
+      "rules": {
+        "react/function-component-definition": "off",
+        "react/jsx-props-no-spreading": "off"
+      }
+    }
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -43,7 +50,7 @@
     "max-len": ["error", { "code": 100, "ignoreUrls": true }],
     "object-curly-newline": ["error", {
         "ImportDeclaration": { "multiline": true, "minProperties": 5 },
-        "ObjectExpression": { "multiline": true, "minProperties": 3 },
+        "ObjectExpression": { "multiline": true, "minProperties": 1 },
         "ObjectPattern": { "multiline": true, "minProperties": 3 }
     }],
     "import/extensions": ["error", "always", { "tsx": "never", "ts": "never", "js": "never" }],
