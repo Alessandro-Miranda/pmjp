@@ -1,5 +1,3 @@
-/* eslint-disable react/function-component-definition */
-/* eslint-disable react/jsx-props-no-spreading */
 import { ComponentMeta } from '@storybook/react';
 import Logo from './index';
 
@@ -10,4 +8,6 @@ const DEFAULT: ComponentMeta<typeof Logo> = {
 
 export default DEFAULT;
 
-export const Default = () => <Logo />;
+export function Default() {
+  return <Logo />;
+}
