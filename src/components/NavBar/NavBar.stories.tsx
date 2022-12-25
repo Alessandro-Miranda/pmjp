@@ -22,20 +22,10 @@ const Template: ComponentStory<typeof NavBar> = (args) => <NavBar {...args} />;
 
 export const Default = Template.bind({});
 const menuItems = [
-  {
-    href: '#missas', label: 'missas',
-  },
-  {
-    href: '#localização', label: 'localização',
-  },
-  {
-    href: '#comunidades', label: 'comunidades',
-  },
-  {
-    href: '#contat', label: 'contato',
-  },
+  { href: '#missas', label: 'missas' },
+  { href: '#localização', label: 'localização' },
+  { href: '#comunidades', label: 'comunidades' },
+  { href: '#contat', label: 'contato' },
 ];
 
-Default.args = {
-  items: menuItems,
-};
+Default.args = { items: menuItems };
