@@ -25,7 +25,7 @@ const menuItems = [
   { href: '#missas', label: 'missas' },
   { href: '#localização', label: 'localização' },
   { href: '#comunidades', label: 'comunidades' },
-  { href: '#contat', label: 'contato' },
+  { href: '#contat', label: 'contato', hasBorder: true },
 ];
 
 Default.args = { items: menuItems };
