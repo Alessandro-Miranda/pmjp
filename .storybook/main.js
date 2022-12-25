@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
@@ -7,7 +9,18 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/preset-scss"
+    {
+      name: '@storybook/preset-scss',
+      options: {
+        sassLoaderOptions: {
+          additionalData: `
+            @import '/src/sass/utilities/_mixins.scss';
+            @import '/src/sass/utilities/_functions.scss';
+            @import '/src/sass/utilities/_variables.scss';
+          `
+        },
+      },
+    },
   ],
   "framework": "@storybook/react",
   "core": {
@@ -15,11 +28,11 @@ module.exports = {
   },
   "webpackFinal": async (config) => {
     config.resolve.alias = {
-      "@Logos": '/public',
-      "@Icons": '/public/icons',
-      "@Components": '/src/components'
-    }
-
+      "@Logos": path.resolve(__dirname, '../public'),
+      "@Icons": path.resolve(__dirname, '../public/icons'),
+      "@Components": path.resolve(__dirname, '../src/components')
+    };
+    
     return config;
   }
 }
