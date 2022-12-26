@@ -23,7 +23,14 @@
       "files": ["*/**/*.stories.tsx", "stories/*"],
       "rules": {
         "react/function-component-definition": "off",
-        "react/jsx-props-no-spreading": "off"
+        "react/jsx-props-no-spreading": "off",
+        "object-curly-newline": ["error", { 
+          "ObjectExpression": { "multiline": true, "minProperties": 1 },
+          "ObjectPattern": { "multiline": true, "minProperties": 1 }
+          }
+        ],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }]
       }
     }
   ],
