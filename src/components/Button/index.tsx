@@ -17,14 +17,18 @@ type Props = {
    * E.g.: 'my-prettier-class another-prettier-class'
    */
   className?: string;
+  /**
+   * Optional data-testid.
+   */
+  testid?: string;
 }
 
-function Button({ handleClickFn, className, children }: Props) {
+function Button({ handleClickFn, className, children, testid }: Props) {
   return (
     <button
       type="button"
       aria-label="Botão"
-      data-testid="button"
+      data-testid={testid}
       className={`${styles.button} ${className}`}
       onClick={handleClickFn}
     >
@@ -33,6 +37,6 @@ function Button({ handleClickFn, className, children }: Props) {
   );
 }
 
-Button.defaultProps = { className: '' };
+Button.defaultProps = { className: '', testid: 'button' };
 
 export default Button;
