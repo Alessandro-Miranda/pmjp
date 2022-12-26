@@ -14,7 +14,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Mobile Trigger component. This component is responsible by closing menu component',
+        component: 'Mobile Trigger component. This component is responsible for closing the menu component',
       },
     },
   },
