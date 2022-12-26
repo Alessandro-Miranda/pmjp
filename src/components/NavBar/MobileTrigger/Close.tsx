@@ -17,6 +17,7 @@ function Close({ handleCloseFn, className }: Props) {
     <Button
       handleClickFn={handleCloseFn}
       className={className}
+      testid="menu-close-button"
     >
       <svg
         width="15"
