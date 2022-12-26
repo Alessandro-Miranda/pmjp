@@ -7,10 +7,7 @@ const config: ComponentMeta<typeof NavBar> = {
   parameters: {
     docs: {
       description: {
-        component: `Navigation bar component.
-          On small screens, should only render the sandwich menu button
-          and when the button is clicked it will show the menu items.
-          On large screens, items should be rendered inline.`,
+        component: 'Navigation bar component. On small screens, should only render the sandwich menu button and when the button is clicked it will show the menu items. On large screens, items should be redered inline',
       },
     },
   },
@@ -20,12 +17,22 @@ export default config;
 
 const Template: ComponentStory<typeof NavBar> = (args) => <NavBar {...args} />;
 
-export const Default = Template.bind({});
+export const NavigationBar = Template.bind({});
 const menuItems = [
-  { href: '#missas', label: 'missas' },
-  { href: '#localização', label: 'localização' },
-  { href: '#comunidades', label: 'comunidades' },
-  { href: '#contat', label: 'contato', hasBorder: true },
+  {
+    href: '#missas', label: 'missas',
+  },
+  {
+    href: '#localização', label: 'localização',
+  },
+  {
+    href: '#comunidades', label: 'comunidades',
+  },
+  {
+    href: '#contat', label: 'contato', hasBorder: true,
+  },
 ];
 
-Default.args = { items: menuItems };
+NavigationBar.args = {
+  items: menuItems,
+};
