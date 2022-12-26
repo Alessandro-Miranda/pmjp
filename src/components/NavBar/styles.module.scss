@@ -82,6 +82,38 @@ $fontSize: 16;
     font: inherit;
     font-weight: 600;
   }
+
+  @media screen and (min-width: $largeScreen) {
+    transform: translateY(0%);
+    background-color: transparent;
+    flex-direction: row;
+    gap: toRem(40);
+    position: relative;
+    height: max-content;
+    width: max-content;
+    padding-top: 0;
+
+    & > li a {
+      color: var(--blackChocolate-500);
+      font-size: toRem(14);
+      font-weight: 300;
+      height: max-content;
+
+      &:hover {
+        color: inherit;
+      }
+    }
+
+    &:last-child a[data-border="true"] {
+      @include border-default;
+      padding: toRem(13) toRem(40);
+      border-radius: toRem(56);
+
+      &:hover {
+        border-color: var(--blackChocolate-500);
+      }
+    }
+  }
 }
 
 .navigation__closeList {
@@ -100,5 +132,9 @@ $fontSize: 16;
     width: toRem($svgSize);
     height: toRem($svgSize);
     color: var(--ivory-100);
+  }
+
+  @media screen and (min-width: $largeScreen) {
+    display: none;
   }
 }
