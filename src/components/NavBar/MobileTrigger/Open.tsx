@@ -12,6 +12,7 @@ function Open({ handleOpenFn, className }: Props) {
     <Button
       handleClickFn={handleOpenFn}
       className={className}
+      testid="menu-open-button"
     >
       <Image
         src={menu}
