@@ -1,20 +1,25 @@
 body {
-    font: normal 300 toRem($textSizeSmall) $textFont;
-    letter-spacing: letterSpacing($textSizeSmall, 5);
-    color: var(--blackChocolate-500);
+  font: normal 300 toRem($textSizeSmall) $textFont;
+  letter-spacing: letterSpacing($textSizeSmall, 5);
+  color: var(--blackChocolate-500);
 
-    @media screen and (min-width: $largeScreen) {
-        font-size: $textSizeLarge;
-        letter-spacing: letterSpacing($textSizeLarge, 5);
-    }
+  @media screen and (min-width: $largeScreen) {
+    font-size: $textSizeLarge;
+    letter-spacing: letterSpacing($textSizeLarge, 5);
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font: normal 400 $titleSizeSmall $titleFont;
-    letter-spacing: letterSpacing($titleSizeSmall, 5);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: normal 400 $titleSizeSmall $titleFont;
+  letter-spacing: letterSpacing($titleSizeSmall, 5);
 
-    @media screen and (min-width: $largeScreen) {
-        font-size: toRem($titleSizeLarge);
-        letter-spacing: letterSpacing($titleSizeSmall, 5);
-    }
+  @media screen and (min-width: $largeScreen) {
+    font-size: toRem($titleSizeLarge);
+    letter-spacing: letterSpacing($titleSizeSmall, 5);
+  }
 }

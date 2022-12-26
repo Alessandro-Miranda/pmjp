@@ -1,9 +1,9 @@
 @mixin border-default {
-    border: 2px solid var(--blackChocolate-500);
-    border-radius: toRem(20);
-    transition: border .2s ease-in-out;
+  border: 2px solid var(--blackChocolate-500);
+  border-radius: toRem(20);
+  transition: border 0.2s ease-in-out;
 
-    &:hover {
-        border-color: var(--rufous-500);
-    }
+  &:hover {
+    border-color: var(--rufous-500);
+  }
 }
