@@ -32,7 +32,7 @@ function NavBar({ items }: Props) {
   const handleCloseMenu = () => setIsOpenMenu(false);
 
   return (
-    <NavigationMenu.Root className={styles.navBar__container}>
+    <NavigationMenu.Root className={styles.navBar__container} data-testid="navbar">
       <MobileTrigger.Open
         handleOpenFn={handleOpenMenu}
         className={styles.trigger__open__buton}
