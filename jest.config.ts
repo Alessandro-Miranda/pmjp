@@ -9,7 +9,7 @@ const CONFIG = {
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
   coverageReporters: ['json', 'text', 'lcov', 'clover'],
-  coverageThreshould: {
+  coverageThreshold: {
     global: {
       branches: 95,
       lines: 95,
@@ -21,12 +21,17 @@ const CONFIG = {
   // globals: {},
   moduleFileExtensions: ['ts', 'tsx', 'node', 'js', 'd.ts'],
   // moduleNameMapper: {},
-  preset: 'ts-jest',
+  transform: {
+    '^.+\\.(ts|tsx|js)$': [
+      'ts-jest',
+      { tsconfig: { jsx: 'react', allowUmdGlobalAccess: true } },
+    ],
+    '\\.scss$': '<rootDir>/__mocks__/styleMock.js',
+  },
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
   testEnvironment: 'jest-environment-jsdom',
   testMatch: [
-    '**/__tests__/**/*.[jt]s?(x)',
-    '**/?(*.)+(spec|test).[tj]s?(x)',
+    '*/**/__tests__/*.spec.tsx',
   ],
 };
 
