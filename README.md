@@ -72,9 +72,9 @@ O projeto utiliza [Storybook](https://storybook.js.org/), portanto deve-se inici
 npm run storybook
 ```
 
-Com isso já será possível abrir a página de boas-vindas acessando o endereço [http://localhost:6006](http://localhost:6006) em seu navegador.
+Com isso já será possível abrir a página inicial acessando o endereço [http://localhost:6006](http://localhost:6006) em seu navegador.
 
-*Para maiores detalhes sobre as configurações e uso consulte [Storybook](https://storybook.js.org/).*
+*Obs.: Para maiores detalhes sobre as configurações e uso so Storybook consulte [Storybook](https://storybook.js.org/).*
 
 Para iniciar o servidor de desenvolvimento utilize o comando
 
@@ -103,7 +103,7 @@ O projeto contém testes de cada componente da interface e métodos auxiliares. 
 
 ## Build
 
-- `npm run lint`: Faz a verificação do código e correção utilizando como base o arquivo `.eslintrc.json` e deve ser executado antes da realização do build/deploy.
+- `npm run lint`: Faz a verificação do código utilizando como base o arquivo `.eslintrc.json` e deve ser executado antes da realização do build/deploy.
 - `npm run build`: Gera o build das páginas de forma estática para as páginas que usam (ou não) getStaticProps. *Obs.: Opcional com base na plataforma onde será feito o deploy.*
 
 ## Deploy
