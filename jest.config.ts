@@ -20,13 +20,12 @@ const CONFIG = {
   // A set of global variables that need to be available in all test environments
   // globals: {},
   moduleFileExtensions: ['ts', 'tsx', 'node', 'js', 'd.ts'],
-  // moduleNameMapper: {},
+  moduleNameMapper: { '\\.scss$': '<rootDir>/__mocks__/styleMock.js' },
   transform: {
     '^.+\\.(ts|tsx|js)$': [
       'ts-jest',
       { tsconfig: { jsx: 'react', allowUmdGlobalAccess: true } },
     ],
-    '\\.scss$': '<rootDir>/__mocks__/styleMock.js',
   },
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
   testEnvironment: 'jest-environment-jsdom',
