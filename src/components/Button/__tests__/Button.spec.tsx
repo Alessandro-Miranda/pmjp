@@ -26,13 +26,13 @@ describe('Button', () => {
   });
 
   test('Should invoke Story\'s play function', async () => {
-    const DivRoot = document.createElement('div');
+    const div = document.createElement('div');
     render(
       <Clicked {...Default.args} />,
-      { container: DivRoot },
+      { container: document.body.appendChild(div) },
     );
 
-    await Clicked.play({ args: { ...Clicked.args }, canvasElement: DivRoot });
+    await Clicked.play({ args: { ...Clicked.args }, canvasElement: div });
 
     expect(Clicked.args?.handleClickFn).toHaveBeenCalled();
   });
