@@ -31,7 +31,7 @@ Clicked.play = async ({
 }) => {
   const canvas = within(canvasElement);
 
-  userEvent.click(canvas.getByTestId('button'));
+  userEvent.click(canvas.getByTestId('menu-open-button'));
 
   await waitFor(() => expect(args.handleOpenFn).toHaveBeenCalled());
 };
