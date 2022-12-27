@@ -20,14 +20,25 @@ type LinkProps = {
    * Defines if navigation link should has border property.
    */
   hasBorder?: boolean;
+  /**
+   * Defines a custom data-testid to component
+   */
+  testid?: string;
 };
 
-function NavLink({ className, children, href, hasBorder }: LinkProps) {
+function NavLink({
+  className,
+  children,
+  href,
+  hasBorder,
+  testid,
+}: LinkProps) {
   return (
     <Link href={href} passHref>
       <NavigationLink
         className={`${styles.navLink} ${className}`}
         data-border={hasBorder}
+        data-testid={testid}
       >
         {children}
       </NavigationLink>
@@ -35,6 +46,6 @@ function NavLink({ className, children, href, hasBorder }: LinkProps) {
   );
 }
 
-NavLink.defaultProps = { className: '', hasBorder: false };
+NavLink.defaultProps = { className: '', hasBorder: false, testid: 'nav-link' };
 
 export default NavLink;
