@@ -21,13 +21,23 @@ type Props = {
    * Optional data-testid.
    */
   testid?: string;
+  /**
+   * Optional aria Label.
+   */
+  ariaLabel?: string;
 }
 
-function Button({ handleClickFn, className, children, testid }: Props) {
+function Button({
+  children,
+  handleClickFn,
+  ariaLabel,
+  className,
+  testid,
+}: Props) {
   return (
     <button
       type="button"
-      aria-label="Botão"
+      aria-label={ariaLabel}
       data-testid={testid}
       className={`${styles.button} ${className}`}
       onClick={handleClickFn}
@@ -37,6 +47,6 @@ function Button({ handleClickFn, className, children, testid }: Props) {
   );
 }
 
-Button.defaultProps = { className: '', testid: 'button' };
+Button.defaultProps = { className: '', testid: 'button', ariaLabel: 'Botão' };
 
 export default Button;
