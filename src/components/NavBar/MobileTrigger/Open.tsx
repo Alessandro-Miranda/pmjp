@@ -13,6 +13,7 @@ function Open({ handleOpenFn, className }: Props) {
       handleClickFn={handleOpenFn}
       className={className}
       testid="menu-open-button"
+      ariaLabel="Menu"
     >
       <Image
         src={menu}

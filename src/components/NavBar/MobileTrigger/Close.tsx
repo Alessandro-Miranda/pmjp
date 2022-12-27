@@ -18,6 +18,7 @@ function Close({ handleCloseFn, className }: Props) {
       handleClickFn={handleCloseFn}
       className={className}
       testid="menu-close-button"
+      ariaLabel="Fechar menu"
     >
       <svg
         width="15"
