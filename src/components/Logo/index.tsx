@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 
 function Logo() {
   return (
-    <div className={styles.logo__container}>
+    <div className={styles.logo__container} data-testid="logo">
       <Image
         src={logo}
         alt="Logo Paróquia Menino Jesus de Praga"
