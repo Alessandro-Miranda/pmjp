@@ -41,4 +41,5 @@ LinkWithBorder.args = {
   href: '/informação',
   children: 'informação',
   hasBorder: true,
+  testid: 'nav-link-with-border',
 };
