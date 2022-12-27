@@ -4,7 +4,9 @@ import { userEvent, waitFor, within } from '@storybook/testing-library';
 import React from 'react';
 import Button from '..';
 
-const buttonChildren = React.createElement('p', {}, 'Click Me');
+const buttonChildren = React.createElement('p', {
+  'data-testid': 'button-children',
+}, 'Click Me');
 
 export default {
   title: 'Components/Button',
@@ -12,6 +14,8 @@ export default {
   args: {
     handleClickFn: jest.fn(),
     children: buttonChildren,
+    className: 'story-class',
+    testid: 'story-test',
   },
   parameters: {
     docs: {
@@ -32,6 +36,6 @@ Clicked.play = async ({
   args, canvasElement,
 }) => {
   const canvas = within(canvasElement);
-  userEvent.click(canvas.getByTestId('button'));
+  userEvent.click(canvas.getByTestId('story-test'));
   await waitFor(() => expect(args.handleClickFn).toHaveBeenCalled());
 };
