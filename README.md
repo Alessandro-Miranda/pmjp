@@ -94,9 +94,9 @@ O diretório `src/pages/api` é mapeado como `/api/*`. Arquivos neste diretório
 
 ### Testes
 
-O projeto contém testes de cada componente da interface e métodos auxiliares.
+O projeto contém testes de cada componente da interface e métodos auxiliares. *Os testes estão presentes na pasta de cada componente e método auxiliar*.
 
-- `npm test` or `npm t`: executa todos os casos de testes unitários presentes na pasta `__tests__`.
+- `npm test` or `npm t`: executa todos os casos de testes unitários presentes na sub-pasta `__tests__` presente na pasta de cada componente e métodos.
 - `npm test <modulo_componente>.spec.<extensao>`: executa um único caso de teste definido pelo nome do arquivo.
 - `npm run test:watch`: executa os casos de teste durante o desenvolvimento.
 - `npm run test:cov`: executa todos os casos de testes e gera o relatório de cobertura de código salvando-o na pasta `coverage`. 
