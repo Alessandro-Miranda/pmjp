@@ -8,6 +8,7 @@ type Variants = {
   h5: 'h5';
   h6: 'h6';
   p: 'p';
+  span: 'span';
   default: 'p';
 };
 
@@ -19,6 +20,7 @@ const VARIANTS_MAP: Variants = {
   h5: 'h5',
   h6: 'h6',
   p: 'p',
+  span: 'span',
   default: 'p',
 };
 
