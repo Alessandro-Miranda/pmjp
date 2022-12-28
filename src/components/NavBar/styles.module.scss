@@ -116,6 +116,26 @@ $fontSize: 16;
   }
 }
 
+.navigation__link {
+  font-size: toRem(14);
+  font-weight: var(--textRegular);
+  text-transform: uppercase;
+  transition: color 0.2s ease-in-out;
+
+  &[data-border="true"] {
+    @include border-default;
+    border-radius: toRem(56);
+    padding: toRem(13) toRem(40);
+
+    font-weight: var(--textSemibold);
+    font-size: toRem(16);
+  }
+
+  &:hover {
+    color: var(--rufous-500);
+  }
+}
+
 .navigation__closeList {
   padding: toRem($svgPadding);
   line-height: 0;
