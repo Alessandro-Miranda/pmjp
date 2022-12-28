@@ -15,6 +15,7 @@ describe('Typography component', () => {
     H5,
     H6,
     P,
+    Span,
   } = composeStories(Stories);
 
   test('Component Should rendered with correctly variants', () => {
@@ -28,6 +29,7 @@ describe('Typography component', () => {
         <H5 {...H5.args} />
         <H6 {...H6.args} />
         <P {...P.args} />
+        <Span {...Span.args} />
       </>,
     );
 
@@ -39,5 +41,6 @@ describe('Typography component', () => {
     expect(getByTestId('h4-variant').tagName).toBe('H4');
     expect(getByTestId('h5-variant').tagName).toBe('H5');
     expect(getByTestId('h6-variant').tagName).toBe('H6');
+    expect(getByTestId('span-variant').tagName).toBe('SPAN');
   });
 });

@@ -26,6 +26,7 @@ export const H4 = Template.bind({});
 export const H5 = Template.bind({});
 export const H6 = Template.bind({});
 export const P = Template.bind({});
+export const Span = Template.bind({});
 
 H1.args = {
   variant: 'h1',
@@ -54,4 +55,8 @@ H6.args = {
 P.args = {
   variant: 'p',
   testid: 'p-variant',
+};
+Span.args = {
+  variant: 'span',
+  testid: 'span-variant',
 };
