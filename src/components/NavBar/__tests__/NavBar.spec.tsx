@@ -3,7 +3,6 @@ import { composeStories } from '@storybook/testing-react';
 import { cleanup, render } from '@testing-library/react';
 import * as CloseTriggerStories from './CloseTrigger.stories';
 import * as NavBarStories from './NavBar.stories';
-import * as NavLinkStories from './NavLink.stories';
 import * as OpenTriggerStories from './OpenTrigger.stories';
 
 describe('NavBar componen', () => {
@@ -11,7 +10,6 @@ describe('NavBar componen', () => {
 
   const { Default: CloseDefault, Clicked: CloseClicked } = composeStories(CloseTriggerStories);
   const { Default: OpenDefault, Clicked: OpenClicked } = composeStories(OpenTriggerStories);
-  const { Default: LinkDefault, LinkWithBorder } = composeStories(NavLinkStories);
   const { Menu, MenuClosed, MenuOpened } = composeStories(NavBarStories);
 
   const assertIsOpenMenuListHelper = async (
@@ -62,18 +60,13 @@ describe('NavBar componen', () => {
     expect(OpenClicked.args?.handleOpenFn).toHaveBeenCalled();
   });
 
-  test('Link component should be rendered with correct label', () => {
+  test('Navigation link should be rendered with correct label', () => {
     const { getByTestId } = render(
-      <>
-        <LinkDefault {...LinkDefault.args} />
-        <LinkWithBorder {...LinkWithBorder.args} />
-      </>,
+      <MenuOpened {...MenuOpened.args} />,
     );
 
-    const link = getByTestId('nav-link');
-    const linkWithBorder = getByTestId('nav-link-with-border');
+    const link = getByTestId('navigation-link-contato');
     expect(link).toHaveTextContent('contato');
-    expect(linkWithBorder).toHaveTextContent('informação');
   });
 
   test('Menu should be in the document', () => {
