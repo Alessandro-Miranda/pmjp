@@ -1,5 +1,4 @@
 import * as MobileTrigger from '@Components/NavBar/MobileTrigger';
-import NavLink from '@Components/NavBar/NavLink';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { useState } from 'react';
 import styles from './styles.module.scss';
@@ -16,9 +15,14 @@ function MenuItems({ items }: Props) {
     <>
       {items.map(({ href, label, hasBorder = false }) => (
         <NavigationMenu.Item key={label}>
-          <NavLink href={href} hasBorder={hasBorder}>
+          <NavigationMenu.Link
+            data-border={hasBorder}
+            data-testid={`navigation-link-${label}`}
+            className={styles.navigation__link}
+            href={href}
+          >
             {label}
-          </NavLink>
+          </NavigationMenu.Link>
         </NavigationMenu.Item>
       ))}
     </>
