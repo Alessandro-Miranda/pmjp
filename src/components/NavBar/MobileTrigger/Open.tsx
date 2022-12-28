@@ -18,7 +18,6 @@ function Open({ handleOpenFn, className }: Props) {
       <Image
         src={menu}
         alt="Abrir menu"
-        fill
       />
     </Button>
   );

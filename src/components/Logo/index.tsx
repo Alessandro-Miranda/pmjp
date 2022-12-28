@@ -8,9 +8,8 @@ function Logo() {
       <Image
         src={logo}
         alt="Logo Paróquia Menino Jesus de Praga"
-        loading="lazy"
         className={styles.logo}
-        fill
+        priority
       />
     </div>
   );
