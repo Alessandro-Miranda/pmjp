@@ -20,7 +20,8 @@
       "@Components/*": ["src/components/*"],
       "@Icons/*": ["public/icons/*"],
       "@Logos/*": ["public/*"],
-      "@Images/*": ["public/images/*"]
+      "@Images/*": ["public/images/*"],
+      "@Styles/*": ["src/sass/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "@types/*.d.ts"],
