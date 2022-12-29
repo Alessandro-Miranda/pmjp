@@ -1,18 +1,23 @@
 @import '../../sass//utilities/variables';
 @import '../../sass/utilities/mixins';
+@import '../../sass/utilities/functions';
 
 $svgSize: 20;
 $svgPadding: 10;
 $closeMenuTopPosition: 10;
 $fontSize: 16;
 
-.navBar__container {
-  position: relative;
+.navigation__root {
+  /* Radix-ui MenuNavigation inserts a div element as parent ul with inline style content (position: relative). To menulist to be displayed with 100vw and to position absolute property in menulist works correctly, it's necessary to force the div element to has position absolute. */
+  & > div {
+    position: absolute!important;
+    left: 0;
+    top: 0;
+  }
 }
 
 .trigger__open__buton {
   display: block;
-  position: absolute;
   top: 0;
   width: toRem(40);
   max-width: toRem(40);
