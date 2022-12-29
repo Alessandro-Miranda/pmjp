@@ -1,0 +1,11 @@
+@import './utilities/variables';
+
+.header {
+  border-bottom: 1px solid var(--blackChocolate-500);
+  padding: $mobileBodyMargin;
+}
+
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+}
