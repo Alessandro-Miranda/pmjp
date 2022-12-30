@@ -1,11 +1,61 @@
 @import './utilities/variables';
+@import './utilities/functions';
 
 .header {
   border-bottom: 1px solid var(--blackChocolate-500);
-  padding: $mobileBodyMargin;
 }
 
 .header__navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: $mobileBodyMargin;
+}
+
+.header__navBarSeparator {
+  height: 1px;
+  background-color: var(--blackChocolate-500);
+}
+
+.header__hero__container {
+  padding: toRem(20) $mobileBodyMargin toRem(84);
+  position: relative;
+}
+
+.header__hero__banner {
+  width: toRem(220);
+  height: toRem(225);
+  background-image: url('/images/banner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: calc(220px / 3);
+  filter: contrast(.75);
+  position: absolute;
+  top: toRem(20);
+  right: 0;
+  z-index: -1;
+}
+
+.header__hero__citation {
+  text-transform: uppercase;
+  font-size: $textSizeLarge;
+  text-align: center;
+
+  width: 90vw;
+  max-width: toRem(313);
+  margin: toRem(84) auto toRem(50);
+
+  & > span {
+    font-weight: 600;
+    font-style: italic;
+  }
+}
+
+.header__hero__citation__author {
+  text-transform: capitalize;
+  font-family: $titleFont;
+  font-size: toRem(32);
+  font-weight: 400;
+  text-align: center;
+
 }
