@@ -18,6 +18,7 @@ Object.defineProperty(NextImage, "default", {
   value: (props) => (
     <OriginalNextImage
       {...props}
+      fill
       unoptimized
     />
   ),
