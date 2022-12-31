@@ -4,7 +4,7 @@ body {
   color: var(--blackChocolate-500);
 
   @media screen and (min-width: $largeScreen) {
-    font-size: $textSizeLarge;
+    font-size: toRem($textSizeLarge);
     letter-spacing: letterSpacing($textSizeLarge, 5);
   }
 }
@@ -15,8 +15,12 @@ h3,
 h4,
 h5,
 h6 {
-  font: normal 400 $titleSizeSmall $titleFont;
+  font: normal 400 toRem($titleSizeSmall) $titleFont;
   letter-spacing: letterSpacing($titleSizeSmall, 5);
+  text-transform: uppercase;
+  width: max-content;
+  max-width: calc(100vw - $mobileBodyMargin * 2);
+  margin: 0 auto;
 
   @media screen and (min-width: $largeScreen) {
     font-size: toRem($titleSizeLarge);
