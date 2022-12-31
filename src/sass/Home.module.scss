@@ -29,11 +29,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: calc(220px / 3);
-  filter: contrast(.75);
+  filter: contrast(.35);
   position: absolute;
   top: toRem(20);
   right: 0;
-  z-index: -1;
+  z-index: -2;
 }
 
 .header__hero__citation {
@@ -48,6 +48,23 @@
   & > span {
     font-weight: 600;
     font-style: italic;
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      bottom: 0;
+      width: 110%;
+      height: 100%;
+      background-image: url('/images/brush-line-1.png');
+      background-repeat: no-repeat;
+      background-size: 100% 70%;
+      background-position-y: 150%;
+    }
   }
 }
 
