@@ -7,3 +7,26 @@
     border-color: var(--rufous-500);
   }
 }
+
+.sectionDecoration {
+  content: '';
+  position: absolute;
+  width: toRem(60);
+  height: toRem(10);
+
+  background-color: var(--rufous-500);
+}
+
+@mixin section-decoration {
+  &::before {
+    @extend .sectionDecoration;
+    top: 0;
+    left: $mobileBodyMargin;
+  }
+
+  &::after {
+    @extend .sectionDecoration;
+    bottom: 0;
+    right: $mobileBodyMargin;
+  }
+}
