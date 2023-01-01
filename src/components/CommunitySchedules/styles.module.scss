@@ -1,0 +1,42 @@
+@import '../../sass/utilities/functions';
+@import '../../sass/utilities/variables';
+
+.schedule__timeIcon {
+  width: toRem(18);
+  height: auto;
+  vertical-align: middle;
+}
+
+.schedule__title {
+  margin-top: toRem(40);
+  font-family: $titleFont;
+  font-size: toRem($textSizeLarge);
+  padding-bottom: $mobileBodyMargin;
+}
+
+.schedule__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid rgba(30, 27, 24, .2);
+
+  &:last-of-type {
+    border-bottom: unset;
+  }
+
+  & > p {
+    flex: 1;
+  }
+
+  & > div {
+    width: 1px;
+    height: 25px;
+    background-color: rgba(30, 27, 24, .2);
+  }
+}
+
+.schedule--time {
+  text-align: center;
+}
