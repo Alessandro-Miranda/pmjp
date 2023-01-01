@@ -10,7 +10,7 @@ type Props = {
     items: { href: string; label: string; hasBorder?: boolean }[];
 }
 
-function MenuItems({ items }: Props) {
+function MenuItems({ items, handleClickFn }: Props & { handleClickFn: () => void }) {
   return (
     <>
       {items.map(({ href, label, hasBorder = false }) => (
@@ -20,6 +20,7 @@ function MenuItems({ items }: Props) {
             data-testid={`navigation-link-${label}`}
             className={styles.navigation__link}
             href={href}
+            onClick={handleClickFn}
           >
             {label}
           </NavigationMenu.Link>
@@ -53,7 +54,7 @@ function NavBar({ items }: Props) {
           handleCloseFn={handleCloseMenu}
           className={styles.navigation__closeList}
         />
-        <MenuItems items={items} />
+        <MenuItems items={items} handleClickFn={handleCloseMenu} />
       </NavigationMenu.List>
     </NavigationMenu.Root>
   );
