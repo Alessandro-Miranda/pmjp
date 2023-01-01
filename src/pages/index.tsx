@@ -1,21 +1,22 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import * as Accordion from '@radix-ui/react-accordion';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 import * as Separator from '@radix-ui/react-separator';
 
-import styles from '@Styles/Home.module.scss';
-
 import Arrow from '@Icons/arrow.svg';
-import Location from '@Icons/location.svg';
 import Open from '@Icons/open.svg';
 
+import Address from '@Components/Address';
 import ArticleNumber from '@Components/ArticleNumber';
 import Logo from '@Components/Logo';
 import NavBar from '@Components/NavBar';
 import Typography from '@Components/Typography';
-import Link from 'next/link';
+
+import CommunitySchedules from '@Components/CommunitySchedules';
+import styles from '@Styles/Home.module.scss';
 
 export default function Home() {
   return (
@@ -134,15 +135,9 @@ export default function Home() {
                     localização
                   </Typography>
 
-                  <Image
-                    src={Location}
-                    alt="Localização"
-                    className={styles.section__article__location}
-                    aria-hidden
+                  <Address
+                    address="Rua Luiz de Vasconscelos, 100. Diadema - SP."
                   />
-                  <Typography className={styles['section__article__text--location']}>
-                    Rua Luiz de Vasconscelos, 100. Diadema - SP.
-                  </Typography>
 
                   <Link
                     href="https://www.google.com/maps/dir/?api=1&destination=R.+Luiz+de+Vasconcelos,+100+-+Vila+Nogueira,+Diadema+-+SP,+09960-250"
@@ -200,9 +195,19 @@ export default function Home() {
                   />
                 </Accordion.Trigger>
                 <Accordion.Content className={styles.section__communities__accordion__content}>
-                  <Typography>
-                    Informações da comunidade
-                  </Typography>
+                  <div>
+                    <Address
+                      address="Rua Matia de Albuquerque, 49. Vila Lidia. Diadema - SP."
+                      textClass={styles.section__communities__accordion__content__address}
+                    />
+
+                    <CommunitySchedules
+                      schedules={[
+                        { weekday: 'Sexta-feira', time: '19:30' },
+                        { weekday: 'Domingo', time: '08:30' },
+                      ]}
+                    />
+                  </div>
                 </Accordion.Content>
               </Accordion.Item>
 
@@ -222,9 +227,19 @@ export default function Home() {
                   />
                 </Accordion.Trigger>
                 <Accordion.Content className={styles.section__communities__accordion__content}>
-                  <Typography>
-                    Informações são paulo
-                  </Typography>
+                  <div>
+                    <Address
+                      address="Rua Mozart, 271. Jardim Arco Íris. Diadema - SP."
+                      textClass={styles.section__communities__accordion__content__address}
+                    />
+
+                    <CommunitySchedules
+                      schedules={[
+                        { weekday: 'Quarta-feira', time: '19:30' },
+                        { weekday: 'Sábado', time: '08:30' },
+                      ]}
+                    />
+                  </div>
                 </Accordion.Content>
               </Accordion.Item>
 
@@ -244,7 +259,19 @@ export default function Home() {
                   />
                 </Accordion.Trigger>
                 <Accordion.Content className={styles.section__communities__accordion__content}>
-                  <Typography>Informações são paulo</Typography>
+                  <div>
+                    <Address
+                      address="Rua João Batista Alves do Nascimento, 44. Vila Popular. Diadema - SP."
+                      textClass={styles.section__communities__accordion__content__address}
+                    />
+
+                    <CommunitySchedules
+                      schedules={[
+                        { weekday: 'Quarta-feira', time: '19:30' },
+                        { weekday: 'Domingo', time: '08:30' },
+                      ]}
+                    />
+                  </div>
                 </Accordion.Content>
               </Accordion.Item>
 
@@ -264,7 +291,19 @@ export default function Home() {
                   />
                 </Accordion.Trigger>
                 <Accordion.Content className={styles.section__communities__accordion__content}>
-                  <Typography>Informações são paulo</Typography>
+                  <div>
+                    <Address
+                      address="Rua Dom Marcos Teixeira, 155. Bairro Novo (Noevo). Diadema - SP."
+                      textClass={styles.section__communities__accordion__content__address}
+                    />
+
+                    <CommunitySchedules
+                      schedules={[
+                        { weekday: 'Sexta-feira', time: '19:30' },
+                        { weekday: 'Domingo', time: '17:00' },
+                      ]}
+                    />
+                  </div>
                 </Accordion.Content>
               </Accordion.Item>
 
@@ -284,7 +323,19 @@ export default function Home() {
                   />
                 </Accordion.Trigger>
                 <Accordion.Content className={styles.section__communities__accordion__content}>
-                  <Typography>Informações são paulo</Typography>
+                  <div>
+                    <Address
+                      address="Rua Isaac Aizemberg, 96. Vila Nogueira. Diadema - SP."
+                      textClass={styles.section__communities__accordion__content__address}
+                    />
+
+                    <CommunitySchedules
+                      schedules={[
+                        { weekday: 'Sexta-feira', time: '19:30' },
+                        { weekday: 'Domingo', time: '08:30' },
+                      ]}
+                    />
+                  </div>
                 </Accordion.Content>
               </Accordion.Item>
             </Accordion.Root>
