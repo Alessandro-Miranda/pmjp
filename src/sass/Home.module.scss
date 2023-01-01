@@ -124,20 +124,6 @@
   margin: 0 0 $mobileBodyMargin * 2;
 }
 
-.section__article__location {
-  display: inline-block;
-  width: toRem(15);
-  height: auto;
-  vertical-align: middle;
-}
-
-.section__article__text--location {
-  display: inline-block;
-  max-width: toRem(235);
-  margin-left: $mobileBodyMargin;
-  vertical-align: middle;
-}
-
 .sectopn__article__location__link {
   display: block;
   max-width: toRem(220);
@@ -245,7 +231,11 @@
     animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
   }
 
-  & > p {
+  & > div {
     padding-bottom: toRem(55);
   }
+}
+
+.section__communities__accordion__content__address {
+  max-width: 90%;
 }
