@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 
+import * as Accordion from '@radix-ui/react-accordion';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 import * as Separator from '@radix-ui/react-separator';
 
@@ -8,6 +9,7 @@ import styles from '@Styles/Home.module.scss';
 
 import Arrow from '@Icons/arrow.svg';
 import Location from '@Icons/location.svg';
+import Open from '@Icons/open.svg';
 
 import ArticleNumber from '@Components/ArticleNumber';
 import Logo from '@Components/Logo';
@@ -27,7 +29,7 @@ export default function Home() {
           <Logo />
           <NavBar
             items={[
-              { href: '#masses', label: 'missas' },
+              { href: '#schedules', label: 'horários' },
               { href: '#localization', label: 'localização' },
               { href: '#communities', label: 'comunidades' },
               { href: '#contact', label: 'contato', hasBorder: true },
@@ -53,12 +55,23 @@ export default function Home() {
             </Typography>
           </blockquote>
 
-          <div role="banner" aria-hidden className={styles.header__hero__banner} />
+          <div
+            role="banner"
+            aria-hidden
+            className={styles.header__hero__banner}
+          />
         </div>
       </header>
       <main>
-        <section className={styles.section}>
-          <Typography variant="h1" className={styles.section__title}>
+        <section
+          className={styles.section}
+          role="contentinfo"
+          aria-label="Conheça nossa paróquia. História, horários de atividades e localização"
+        >
+          <Typography
+            variant="h1"
+            className={styles.section__title}
+          >
             conheça nossa paróquia
           </Typography>
           <Separator.Root
@@ -68,10 +81,18 @@ export default function Home() {
 
           <ScrollArea.Root className={styles.section__scrollArea__root}>
             <ScrollArea.Viewport className={styles.section__scrollArea__viewport}>
-              <article className={styles.section__article}>
+              <article
+                className={styles.section__article}
+                role="contentinfo"
+                aria-label="História da paróquia"
+              >
                 <ArticleNumber number={1} />
+
                 <div className={styles.section__article__text__container}>
-                  <Typography variant="h2" className={styles.section__article__title}>
+                  <Typography
+                    variant="h2"
+                    className={styles.section__article__title}
+                  >
                     sobre a paróquia
                   </Typography>
 
@@ -81,11 +102,17 @@ export default function Home() {
                 </div>
               </article>
 
-              <article className={styles.section__article}>
+              <article
+                className={styles.section__article}
+                id="schedules"
+                role="contentinfo"
+                aria-label="Horários das atividades da paróquia (missas, terços, grupos de oração etc.)"
+              >
                 <ArticleNumber number={2} />
+
                 <div className={styles.section__article__text__container}>
                   <Typography variant="h2" className={styles.section__article__title}>
-                    missas
+                    horários
                   </Typography>
 
                   <Typography>
@@ -94,8 +121,14 @@ export default function Home() {
                 </div>
               </article>
 
-              <article className={styles.section__article}>
+              <article
+                className={styles.section__article}
+                id="localization"
+                role="contentinfo"
+                aria-label="Localização da paróquia: endereço e link para Google Maps"
+              >
                 <ArticleNumber number={3} />
+
                 <div className={styles.section__article__text__container}>
                   <Typography variant="h2" className={styles.section__article__title}>
                     localização
@@ -114,23 +147,148 @@ export default function Home() {
                   <Link
                     href="https://www.google.com/maps/dir/?api=1&destination=R.+Luiz+de+Vasconcelos,+100+-+Vila+Nogueira,+Diadema+-+SP,+09960-250"
                     className={styles.sectopn__article__location__link}
-                    aria-label="Abrir o aplicativo ou site Google Maps para verificar o caminho de como chegar à Paróquia Menino Jesus de Praga "
+                    aria-label="Abrir o aplicativo ou site do Google Maps para encontrar as rotas até à Paróquia Menino Jesus de Praga."
                   >
                     como chegar
                     <Image
                       src={Arrow}
                       alt="Navegar para Google Maps"
+                      aria-hidden
                     />
                   </Link>
-
                 </div>
               </article>
             </ScrollArea.Viewport>
+
             <ScrollArea.Scrollbar orientation="vertical">
               <ScrollArea.ScrollAreaThumb />
             </ScrollArea.Scrollbar>
           </ScrollArea.Root>
+        </section>
 
+        <section
+          className={`${styles.section} ${styles['section--communities']}`}
+          id="communities"
+          role="contentinfo"
+          aria-label="Comunidades da Paróquia Menino Jesus de Praga"
+        >
+          <Typography variant="h1" className={styles.section__title}>
+            nossas comunidades
+          </Typography>
+
+          <div className={styles.section__communities__text}>
+            <Typography>
+              Além da paróquia Matriz Menino Jesus de Praga, há também 5 comunidades, totalizando 6
+              capelas espalhadas pelo nosso bairro, para que você possa encontrar a mais próxima e
+              acompanhar as celebrações da santa missa e pastorais.
+            </Typography>
+
+            <Accordion.Root type="single" collapsible>
+              <Accordion.Item
+                value="nossa senhora de nazaré"
+                className={styles.section__communities__accordion}
+              >
+                <Accordion.Trigger
+                  className={styles.section__communities__accordion__trigger}
+                  aria-label="Ver informações da comunidade Nossa Senhora de Nazaré"
+                >
+                  nossa senhora de nazaré
+                  <Image
+                    src={Open}
+                    alt="Ver informações"
+                    aria-hidden
+                  />
+                </Accordion.Trigger>
+                <Accordion.Content className={styles.section__communities__accordion__content}>
+                  <Typography>
+                    Informações da comunidade
+                  </Typography>
+                </Accordion.Content>
+              </Accordion.Item>
+
+              <Accordion.Item
+                value="são paulo apóstolo"
+                className={styles.section__communities__accordion}
+              >
+                <Accordion.Trigger
+                  className={styles.section__communities__accordion__trigger}
+                  aria-label="Ver informações da comunidade São Paulo Apóstolo"
+                >
+                  são paulo apóstolo
+                  <Image
+                    src={Open}
+                    alt="Ver informações"
+                    aria-hidden
+                  />
+                </Accordion.Trigger>
+                <Accordion.Content className={styles.section__communities__accordion__content}>
+                  <Typography>
+                    Informações são paulo
+                  </Typography>
+                </Accordion.Content>
+              </Accordion.Item>
+
+              <Accordion.Item
+                value="nossa senhora aparecida"
+                className={styles.section__communities__accordion}
+              >
+                <Accordion.Trigger
+                  className={styles.section__communities__accordion__trigger}
+                  aria-label="Ver informações da comunidade Nossa Senhora Aparecida"
+                >
+                  nossa senhora aparecida
+                  <Image
+                    src={Open}
+                    alt="Ver informações"
+                    aria-hidden
+                  />
+                </Accordion.Trigger>
+                <Accordion.Content className={styles.section__communities__accordion__content}>
+                  <Typography>Informações são paulo</Typography>
+                </Accordion.Content>
+              </Accordion.Item>
+
+              <Accordion.Item
+                value="santa rita de cássia"
+                className={styles.section__communities__accordion}
+              >
+                <Accordion.Trigger
+                  className={styles.section__communities__accordion__trigger}
+                  aria-label="Ver informações da comunidade Santa Rita de Cássia"
+                >
+                  santa rita de cássia
+                  <Image
+                    src={Open}
+                    alt="Ver informações"
+                    aria-hidden
+                  />
+                </Accordion.Trigger>
+                <Accordion.Content className={styles.section__communities__accordion__content}>
+                  <Typography>Informações são paulo</Typography>
+                </Accordion.Content>
+              </Accordion.Item>
+
+              <Accordion.Item
+                value="imaculada conceição"
+                className={styles.section__communities__accordion}
+              >
+                <Accordion.Trigger
+                  className={styles.section__communities__accordion__trigger}
+                  aria-label="Ver informações da comunidade Imaculada Conceição"
+                >
+                  imaculada conceição
+                  <Image
+                    src={Open}
+                    alt="Ver informações"
+                    aria-hidden
+                  />
+                </Accordion.Trigger>
+                <Accordion.Content className={styles.section__communities__accordion__content}>
+                  <Typography>Informações são paulo</Typography>
+                </Accordion.Content>
+              </Accordion.Item>
+            </Accordion.Root>
+          </div>
         </section>
       </main>
     </>
