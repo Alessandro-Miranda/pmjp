@@ -11,7 +11,10 @@ type Props = {
 function CommunitySchedules({ schedules }: Props) {
   return (
     <>
-      <Typography className={styles.schedule__title}>
+      <Typography
+        className={styles.schedule__title}
+        data-testid="schedules-title"
+      >
         Celebrações
       </Typography>
 
@@ -20,9 +23,16 @@ function CommunitySchedules({ schedules }: Props) {
           className={styles.schedule__container}
           key={`${weekday}-${time}`}
         >
-          <Typography>{weekday}</Typography>
+          <Typography data-testid={`schedule-day-${weekday}-${time}`}>
+            {weekday}
+          </Typography>
           <Separator.Root orientation="vertical" />
-          <Typography className={styles['schedule--time']}>{time}</Typography>
+          <Typography
+            className={styles['schedule--time']}
+            data-testid={`schedule-hour-${weekday}-${time}`}
+          >
+            {time}
+          </Typography>
         </div>
       ))}
     </>
