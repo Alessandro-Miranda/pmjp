@@ -18,8 +18,12 @@ function Address({ address, icon, iconClass, textClass }: Props) {
         src={icon ?? Location}
         alt="Localização"
         className={`${styles.location__icon} ${iconClass ?? ''}`}
+        data-testid="address-icon"
       />
-      <Typography className={`${styles.location__text} ${textClass ?? ''}`}>
+      <Typography
+        className={`${styles.location__text} ${textClass ?? ''}`}
+        data-testid="address"
+      >
         {address}
       </Typography>
     </div>
