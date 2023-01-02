@@ -5,16 +5,16 @@ import NavBar from '..';
 
 const menuItems = [
   {
-    href: '#missas', label: 'missas',
+    href: '#masses', label: 'masses',
   },
   {
-    href: '#localização', label: 'localização',
+    href: '#location', label: 'location',
   },
   {
-    href: '#comunidades', label: 'comunidades',
+    href: '#communities', label: 'communities',
   },
   {
-    href: '#contat', label: 'contato', hasBorder: true,
+    href: '#contact', label: 'contact', hasBorder: true,
   },
 ];
 
