@@ -21,7 +21,7 @@ Object.defineProperty(NextImage, "default", {
       unoptimized
       width={100}
       height={100}
-      style={{ position: 'relative', width: '100%', height: '100%' }}
+      style={{ position: 'relative' }}
     />
   ),
 });
