@@ -1,12 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import * as Accordion from '@radix-ui/react-accordion';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 import * as Separator from '@radix-ui/react-separator';
 
-import Arrow from '@Icons/arrow.svg';
 import Open from '@Icons/open.svg';
 
 import Address from '@Components/Address';
@@ -16,6 +14,7 @@ import NavBar from '@Components/NavBar';
 import Typography from '@Components/Typography';
 
 import CommunitySchedules from '@Components/CommunitySchedules';
+import HowToGet from '@Components/HowToGetButton';
 import styles from '@Styles/Home.module.scss';
 
 export default function Home() {
@@ -139,18 +138,9 @@ export default function Home() {
                     address="Rua Luiz de Vasconscelos, 100. Diadema - SP."
                   />
 
-                  <Link
-                    href="https://www.google.com/maps/dir/?api=1&destination=R.+Luiz+de+Vasconcelos,+100+-+Vila+Nogueira,+Diadema+-+SP,+09960-250"
-                    className={styles.sectopn__article__location__link}
-                    aria-label="Abrir o aplicativo ou site do Google Maps para encontrar as rotas até à Paróquia Menino Jesus de Praga."
-                  >
-                    como chegar
-                    <Image
-                      src={Arrow}
-                      alt="Navegar para Google Maps"
-                      aria-hidden
-                    />
-                  </Link>
+                  <HowToGet
+                    mapsLink="https://www.google.com/maps/dir/?api=1&destination=R.+Luiz+de+Vasconcelos,+100+-+Vila+Nogueira,+Diadema+-+SP,+09960-250"
+                  />
                 </div>
               </article>
             </ScrollArea.Viewport>
@@ -207,6 +197,11 @@ export default function Home() {
                         { weekday: 'Domingo', time: '08:30' },
                       ]}
                     />
+
+                    <HowToGet
+                      mapsLink="https://www.google.com/maps/dir/?api=1&destination=Capela+Maria+de+Nazaré,+R.+Matias+de+Albuquerque,+49+-+Vila+Lídia,+Diadema+-+SP,+09942-170"
+                      ariaLabel="Abrir o aplicativo ou site Google Maps para visualizar as rotas para a comunidade Maria de Nazaré"
+                    />
                   </div>
                 </Accordion.Content>
               </Accordion.Item>
@@ -239,6 +234,11 @@ export default function Home() {
                         { weekday: 'Sábado', time: '08:30' },
                       ]}
                     />
+
+                    <HowToGet
+                      mapsLink="https://www.google.com/maps/dir/?api=1&destination=Capela+São+Paulo+Apóstolo,+R.+Mozart,+271+-+Jardim+Arco-Iris,+Diadema+-+SP,+09960-590"
+                      ariaLabel="Abrir o aplicativo ou site Google Maps para visualizar as rotas para a comunidade São Paulo Apóstolo"
+                    />
                   </div>
                 </Accordion.Content>
               </Accordion.Item>
@@ -261,7 +261,7 @@ export default function Home() {
                 <Accordion.Content className={styles.section__communities__accordion__content}>
                   <div>
                     <Address
-                      address="Rua João Batista Alves do Nascimento, 44. Vila Popular. Diadema - SP."
+                      address="Rua João Batista Alves do Nascimento, 411. Vila Popular. Diadema - SP."
                       textClass={styles.section__communities__accordion__content__address}
                     />
 
@@ -270,6 +270,11 @@ export default function Home() {
                         { weekday: 'Quarta-feira', time: '19:30' },
                         { weekday: 'Domingo', time: '08:30' },
                       ]}
+                    />
+
+                    <HowToGet
+                      mapsLink="https://www.google.com/maps/dir/?api=1&destination=Capela+Nossa+Senhora+Aparecida,+Vila+Popular+-+Rua+João+Batista+Alves+do+Nascimento,+411+-+Vila+Nogueira,+Diadema+-+SP,+09951-090"
+                      ariaLabel="Abrir o aplicativo ou site Google Maps para visualizar as rotas para a comunidade São Paulo Apóstolo"
                     />
                   </div>
                 </Accordion.Content>
@@ -303,6 +308,11 @@ export default function Home() {
                         { weekday: 'Domingo', time: '17:00' },
                       ]}
                     />
+
+                    <HowToGet
+                      mapsLink="https://www.google.com/maps/dir/?api=1&destination=Comunidade+Santa+Rita+de+Cássia,+R.+Dom+Marcos+Teixeira,+155+-+Jardim+Barrionuevo+(Vila+Nogueira),+Diadema+-+SP,+09960-360"
+                      ariaLabel="Abrir o aplicativo ou site Google Maps para visualizar as rotas para a comunidade São Paulo Apóstolo"
+                    />
                   </div>
                 </Accordion.Content>
               </Accordion.Item>
@@ -334,6 +344,11 @@ export default function Home() {
                         { weekday: 'Sexta-feira', time: '19:30' },
                         { weekday: 'Domingo', time: '08:30' },
                       ]}
+                    />
+
+                    <HowToGet
+                      mapsLink="https://www.google.com/maps/dir/?api=1&destination=Capela+Imaculada+Conceição,+Goyotin,+R.+Isac+Aizemberg,+96,+Diadema+-+SP,+09951-225"
+                      ariaLabel="Abrir o aplicativo ou site Google Maps para visualizar as rotas para a comunidade São Paulo Apóstolo"
                     />
                   </div>
                 </Accordion.Content>
