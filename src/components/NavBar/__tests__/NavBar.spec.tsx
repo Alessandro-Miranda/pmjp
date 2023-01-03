@@ -65,8 +65,8 @@ describe('NavBar componen', () => {
       <MenuOpened {...MenuOpened.args} />,
     );
 
-    const link = getByTestId('navigation-link-contato');
-    expect(link).toHaveTextContent('contato');
+    const link = getByTestId('navigation-link-contact');
+    expect(link).toHaveTextContent('contact');
   });
 
   test('Menu should be in the document', () => {
