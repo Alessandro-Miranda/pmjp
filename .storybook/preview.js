@@ -1,4 +1,5 @@
 import * as NextImage from 'next/image';
+import * as NextLink from 'next/link';
 import '../src/sass/main.scss';
 
 export const parameters = {
@@ -25,3 +26,22 @@ Object.defineProperty(NextImage, "default", {
     />
   ),
 });
+
+const OriginalLink = NextLink.default;
+
+Object.defineProperty(NextLink, "default", {
+  configurable: true,
+  value: (props) => (
+    <OriginalLink
+      {...props}
+    >
+      <a
+        className={props.className}
+        data-testid={props['data-testid']}
+        aria-label={props['aria-label']}
+      >
+        {props.children}
+      </a>
+    </OriginalLink>
+  )
+})
