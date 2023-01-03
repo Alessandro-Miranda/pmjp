@@ -1,0 +1,28 @@
+@import '../../sass/utilities/variables';
+@import '../../sass/utilities/functions';
+@import '../../sass/utilities/mixins';
+
+.how__toGet__link {
+  display: block;
+  max-width: toRem(220);
+  margin-top: $mobileBodyMargin * 4;
+  padding: toRem(10) toRem(30);
+  
+  color: var(--rufous-500);
+  font-family: $titleFont;
+  text-transform: capitalize;
+  font-size: toRem($textSizeLarge);
+  
+  @include border-default;
+  border-color: var(--rufous-500);
+
+  & > img {
+    display: inline-block;
+    width: toRem(20);
+    height: auto;
+    margin-left: toRem(30);
+    
+    vertical-align: middle;
+    transform: rotate(-90deg);
+  }
+}
