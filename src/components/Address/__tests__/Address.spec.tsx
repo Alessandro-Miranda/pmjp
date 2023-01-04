@@ -19,5 +19,11 @@ describe('Address component', () => {
 
     expect(getElementWithCustomClass('address-icon')).toHaveClass('test');
     expect(getElementWithCustomClass('address')).toHaveClass('test');
+
+    cleanup();
+
+    const { getByTestId: getWithCustomIcon } = render(<Default icon="/custom-icon" />);
+
+    expect(getWithCustomIcon('address-icon')).toHaveAttribute('src', '/custom-icon');
   });
 });
