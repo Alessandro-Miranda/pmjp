@@ -73,7 +73,7 @@ $fontSize: 16;
     
     font-size: toRem(16);
     color: var(--ivory-100);
-    font-weight: 600;
+    font-weight: var(--fontSemibold);
 
     &:hover {
       color: var(--ivory-100);
@@ -88,7 +88,7 @@ $fontSize: 16;
     border: unset;
     padding: inherit;
     font: inherit;
-    font-weight: 600;
+    font-weight: var(--fontSemibold);
   }
 
   @media screen and (min-width: $largeScreen) {
@@ -104,7 +104,7 @@ $fontSize: 16;
     & > li a {
       color: var(--blackChocolate-500);
       font-size: toRem(14);
-      font-weight: 300;
+      font-weight: var(--fontLigth);
       height: max-content;
 
       &:hover {
@@ -126,7 +126,7 @@ $fontSize: 16;
 
 .navigation__link {
   font-size: toRem(14);
-  font-weight: var(--textRegular);
+  font-weight: var(--fontRegular);
   text-transform: uppercase;
   transition: color 0.2s ease-in-out;
 
@@ -135,7 +135,7 @@ $fontSize: 16;
     border-radius: toRem(56);
     padding: toRem(13) toRem(40);
 
-    font-weight: var(--textSemibold);
+    font-weight: var(--fontSemibold);
     font-size: toRem(16);
   }
 

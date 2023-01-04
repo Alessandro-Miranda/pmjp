@@ -6,6 +6,7 @@
   flex: 1;
   justify-content: space-between;
   align-items: center;
+
   padding: 0 $mobileBodyMargin;
   margin-bottom: toRem(200);
 
@@ -31,18 +32,20 @@
   width: auto;
   max-width: 50%;
   height: toRem(157);
+  
   filter: saturate(0%);
 }
 
 .card__text {
+  position: relative;
   width: max-content;
+
   font-family: $titleFont;
-  font-weight: var(--titleSemibold);
+  font-weight: var(--fontSemibold);
   font-size: toRem($titleSizeSmall);
   text-transform: uppercase;
-  opacity: 0.3;
   color: var(--ivory-900);
-  position: relative;
+  opacity: 0.3;
 
   &::after {
     content: '';
@@ -50,6 +53,7 @@
     bottom: -$mobileBodyMargin;
     width: calc(50% + $mobileBodyMargin);
     height: 1px;
+    
     background-color: var(--rufous-500);
   }
 }
