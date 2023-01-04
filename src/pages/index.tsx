@@ -57,7 +57,21 @@ export default function Home() {
             <Typography className={styles.header__hero__citation}>
               “ No rosto do
               {' '}
-              <Typography variant="span">Menino Jesus</Typography>
+              <Typography
+                variant="span"
+                className={styles.header__hero__citation__decoration}
+              >
+                <Typography
+                  variant="span"
+                  className={styles['header__hero__citation__decoration--mobile']}
+                >
+                  Menino
+                </Typography>
+                {' '}
+                <Typography variant="span">
+                  Jesus
+                </Typography>
+              </Typography>
               , contemplamos o rosto de Deus. Vinde, adoremos! “
             </Typography>
 
