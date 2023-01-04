@@ -5,7 +5,15 @@ import * as Accordion from '@radix-ui/react-accordion';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 import * as Separator from '@radix-ui/react-separator';
 
+import Email from '@Icons/email.svg';
+import Location from '@Icons/location-white.svg';
+import MobilePhone from '@Icons/mobile.svg';
 import Open from '@Icons/open.svg';
+import CatechismPastoral from '@Images/catechism.jpg';
+import EucharistPastoral from '@Images/eucharist.jpg';
+import LiturgyPastoral from '@Images/liturgy.jpg';
+import MusicPastoral from '@Images/music.jpg';
+import WelcomedPastoral from '@Images/welcomed.jpg';
 
 import Address from '@Components/Address';
 import ArticleNumber from '@Components/ArticleNumber';
@@ -15,7 +23,10 @@ import Typography from '@Components/Typography';
 
 import CommunitySchedules from '@Components/CommunitySchedules';
 import HowToGet from '@Components/HowToGetButton';
+import PastoralCard from '@Components/PastoralCard';
+
 import styles from '@Styles/Home.module.scss';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -356,7 +367,122 @@ export default function Home() {
             </Accordion.Root>
           </div>
         </section>
+
+        <aside className={styles.pastorals__wrapper} aria-labelledby="pastorals__wrapper__text">
+          <Typography className={styles.pastorals__wrapper__text} id="pastorals__wrapper__text">
+            “ venha fazer parte das pastorais e movimentos da nossa comunidade “
+          </Typography>
+        </aside>
+
+        <div>
+          <PastoralCard
+            title="catequese"
+            orientation="row"
+            image={{ src: CatechismPastoral, alt: 'Catequese e crisma de jovens e adultos' }}
+            style={{ image: styles['pastoral__cards--catechism'] }}
+          />
+
+          <PastoralCard
+            title="acolhida"
+            orientation="row-reverse"
+            image={{ src: WelcomedPastoral, alt: 'Pastoral da acolhida' }}
+            style={{ image: styles['pastoral__cards--welcomed'] }}
+          />
+
+          <PastoralCard
+            title="música"
+            orientation="row"
+            image={{ src: MusicPastoral, alt: 'Pastoral da música' }}
+            style={{ image: styles['pastoral__cards--music'] }}
+          />
+
+          <PastoralCard
+            title="eucaristia"
+            orientation="row-reverse"
+            image={{ src: EucharistPastoral, alt: 'Ministério da eucaristia' }}
+          />
+
+          <PastoralCard
+            title="liturgia"
+            orientation="row"
+            image={{ src: LiturgyPastoral, alt: 'Liturgia' }}
+            style={{ image: styles['pastoral__cards--liturgy'] }}
+          />
+        </div>
       </main>
+      <footer className={styles.footer}>
+        <div>
+          <div className={styles.footer__address__container}>
+            <Typography className={styles.footer__entityName}>
+              paróquia menino jesus de praga
+            </Typography>
+
+            <address className={styles.footer__address}>
+              <div>
+                <Image
+                  src={Location}
+                  alt="Localização"
+                  aria-hidden
+                  className={styles.footer__address__icons}
+                />
+                <Typography>
+                  Rua Luiz de Vasconcelos, 100. Jardim Marilene, Diadema - SP
+                </Typography>
+              </div>
+
+              <div>
+                <Image
+                  src={MobilePhone}
+                  alt="Telefone"
+                  aria-hidden
+                  className={`${styles.footer__address__icons} ${styles['footer__address__icons--mobile']}`}
+                />
+                <Typography>
+                  +55 11 4000 0000
+                </Typography>
+              </div>
+
+              <div>
+                <Image
+                  src={Email}
+                  alt="E-mail"
+                  aria-hidden
+                  className={`${styles.footer__address__icons} ${styles['footer__address__icons--email']}`}
+                />
+                <Typography>
+                  paroquia@email.com
+                </Typography>
+              </div>
+            </address>
+          </div>
+          <div className={styles.footer__socialmedia}>
+            <Link href="/facebook">facebook</Link>
+            <Link href="/instagram">instagram</Link>
+            <Link href="/youtube">youtube</Link>
+          </div>
+        </div>
+
+        <small className={styles.footer__copy}>
+          <Typography variant="span">
+            paróquia menino jesus de praga &copy;
+            {' '}
+            {new Date().getFullYear()}
+            . All rights reserved
+          </Typography>
+          <Typography variant="span">
+            developed by
+            {' '}
+            <Typography variant="span" className={styles.footer__copy__developer}>
+              Alessandro Miranda
+            </Typography>
+          </Typography>
+          <Typography variant="span">
+            images by
+            {' '}
+            <cite>freepik</cite>
+          </Typography>
+        </small>
+      </footer>
     </>
   );
 }
