@@ -126,6 +126,10 @@
 
 .section--communities {
   margin-top: toRem(120);
+
+  &::after {
+    display: none;
+  }
 }
 
 .section__communities__text {
@@ -213,4 +217,153 @@
 
 .section__communities__accordion__content__address {
   max-width: 90%;
+}
+
+.pastorals__wrapper {
+  margin: toRem(193) 0;
+  width: 100%;
+  position: relative;
+  padding: toRem(82) 0;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    padding: 2px;
+    background-color: var(--rufous-500);
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.pastorals__wrapper__text {
+  font-size: $textSizeLarge;
+  text-transform: uppercase;
+  text-align: center;
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+.pastoral__cards--catechism {
+  width: toRem(180);
+  height: toRem(200);
+}
+
+.pastoral__cards--welcomed {
+  width: toRem(144);
+  height: toRem(300);
+}
+
+.pastoral__cards--music {
+  width: toRem(220);
+  max-width: 100%;
+  height: toRem(178);
+}
+
+.pastoral__cards--liturgy {
+  width: toRem(200);
+  max-width: 100%;
+  height: toRem(300);
+}
+
+.footer {
+  background-color: var(--rufous-500);
+  color: var(--ivory-100);
+  padding-bottom: $mobileBodyMargin * 2;
+
+  & .footer__address__container {
+    padding: $mobileBodyMargin * 2 $mobileBodyMargin;
+  }
+
+  @media screen and (min-width: $largeScreen) {
+    & > div {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+.footer__entityName {
+  font-family: $titleFont;
+  font-weight: var(--titleRegular);
+  font-size: toRem($titleSizeSmall);
+  text-transform: uppercase;
+  width: 85%;
+  margin-bottom: $mobileBodyMargin;
+}
+
+.footer__address {
+  font-style: normal;
+  font-size: toRem(14);
+
+  & > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: $mobileBodyMargin;
+  }
+}
+
+.footer__address__icons {
+  display: block;
+  width: toRem(25);
+  height: auto;
+  margin-right: $mobileBodyMargin;
+}
+
+.footer__address__icons--mobile {
+  width: auto;
+  height: toRem(25);
+  transform: translateX(15%);
+}
+
+.footer__address__icons--email {
+  width: auto;
+  height: toRem(25);
+  transform: translateY(10%);
+}
+
+.footer__socialmedia {
+  margin-top: toRem(15);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: var(--textSemibold);
+
+  & > a {
+    display: block;
+    padding: toRem(15) 0;
+    border-top: 3px solid var(--ivory-100);
+    border-bottom: 3px solid var(--ivory-100);
+  }
+
+  & > a:nth-child(2) {
+    border: unset;
+  }
+}
+
+.footer__copy {
+  display: block;
+  margin-top: toRem(36);
+  font-size: toRem(8);
+  text-transform: uppercase;
+  text-align: center;
+
+  & > span {
+    display: block;
+    margin-bottom: toRem(5);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer__copy__developer {
+  text-decoration: underline;
 }
