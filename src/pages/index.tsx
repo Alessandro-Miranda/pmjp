@@ -21,9 +21,9 @@ import Logo from '@Components/Logo';
 import NavBar from '@Components/NavBar';
 import Typography from '@Components/Typography';
 
+import * as Card from '@Components/Card';
 import CommunitySchedules from '@Components/CommunitySchedules';
 import HowToGet from '@Components/HowToGetButton';
-import PastoralCard from '@Components/PastoralCard';
 
 import styles from '@Styles/Home.module.scss';
 import Link from 'next/link';
@@ -389,39 +389,62 @@ export default function Home() {
         </aside>
 
         <div>
-          <PastoralCard
-            title="catequese"
-            orientation="row"
-            image={{ src: CatechismPastoral, alt: 'Catequese e crisma de jovens e adultos' }}
-            style={{ image: styles['pastoral__cards--catechism'] }}
-          />
+          <Card.Root className={`${styles.pastorals__card} ${styles.row}`}>
+            <Card.Icon
+              src={CatechismPastoral}
+              alt="Catequese e crisma de jovens e adultos"
+              className={`${styles.pastorals__card__image} ${styles['pastoral__cards--catechism']}`}
+            />
+            <Typography className={styles.pastorals__card__text}>
+              catequese
+            </Typography>
+          </Card.Root>
 
-          <PastoralCard
-            title="acolhida"
-            orientation="row-reverse"
-            image={{ src: WelcomedPastoral, alt: 'Pastoral da acolhida' }}
-            style={{ image: styles['pastoral__cards--welcomed'] }}
-          />
+          <Card.Root
+            className={`${styles.pastorals__card} ${styles['row-reverse']}`}
+          >
+            <Card.Icon
+              src={WelcomedPastoral}
+              alt="Pastoral da acolhida"
+              className={`${styles.pastorals__card__image} ${styles['pastoral__cards--welcomed']}`}
+            />
+            <Typography className={styles.pastorals__card__text}>
+              acolhida
+            </Typography>
+          </Card.Root>
 
-          <PastoralCard
-            title="música"
-            orientation="row"
-            image={{ src: MusicPastoral, alt: 'Pastoral da música' }}
-            style={{ image: styles['pastoral__cards--music'] }}
-          />
+          <Card.Root className={`${styles.pastorals__card} ${styles.row}`}>
+            <Card.Icon
+              src={MusicPastoral}
+              alt="Pastoral da música"
+              className={`${styles.pastorals__card__image} ${styles['pastoral__cards--music']}`}
+            />
+            <Typography className={styles.pastorals__card__text}>
+              música
+            </Typography>
+          </Card.Root>
 
-          <PastoralCard
-            title="eucaristia"
-            orientation="row-reverse"
-            image={{ src: EucharistPastoral, alt: 'Ministério da eucaristia' }}
-          />
+          <Card.Root className={`${styles.pastorals__card} ${styles['row-reverse']}`}>
+            <Card.Icon
+              src={EucharistPastoral}
+              alt="Ministério da eucaristia"
+              className={styles.pastorals__card__image}
+            />
+            <Typography className={styles.pastorals__card__text}>
+              eucaristia
+            </Typography>
+          </Card.Root>
 
-          <PastoralCard
-            title="liturgia"
-            orientation="row"
-            image={{ src: LiturgyPastoral, alt: 'Liturgia' }}
-            style={{ image: styles['pastoral__cards--liturgy'] }}
-          />
+          <Card.Root className={`${styles.pastorals__card} ${styles.row}`}>
+            <Card.Icon
+              src={LiturgyPastoral}
+              alt="Liturgia"
+              className={`${styles.pastorals__card__image} ${styles['pastoral__cards--liturgy']}`}
+            />
+            <Typography className={styles.pastorals__card__text}>
+              música
+            </Typography>
+          </Card.Root>
         </div>
       </main>
       <footer className={styles.footer}>
