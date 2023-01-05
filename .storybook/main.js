@@ -30,6 +30,7 @@ module.exports = {
     config.resolve.alias = {
       "@Logos": path.resolve(__dirname, '../public'),
       "@Icons": path.resolve(__dirname, '../public/icons'),
+      "@Images": path.resolve(__dirname, '../public/images'),
       "@Components": path.resolve(__dirname, '../src/components')
     };
     
