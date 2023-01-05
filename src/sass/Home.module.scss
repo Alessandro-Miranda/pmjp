@@ -258,6 +258,63 @@
   margin-inline: auto;
 }
 
+.pastorals__card {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 $mobileBodyMargin;
+  margin-bottom: toRem(200);
+
+  &.row {
+    flex-direction: row;
+    
+    & > p::after {
+      right: -$mobileBodyMargin;
+    }
+  }
+
+  &.row-reverse {
+    flex-direction: row-reverse;
+
+    & > p::after {
+      left: -$mobileBodyMargin;
+    }
+  }
+}
+
+.pastorals__card__image {
+  position: relative;
+  width: auto;
+  max-width: 50%;
+  height: toRem(157);
+  
+  filter: saturate(0%);
+}
+
+.pastorals__card__text {
+  position: relative;
+  width: max-content;
+
+  font-family: $titleFont;
+  font-weight: var(--fontSemibold);
+  font-size: toRem($titleSizeSmall);
+  text-transform: uppercase;
+  color: var(--ivory-900);
+  opacity: 0.3;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -$mobileBodyMargin;
+    width: calc(50% + $mobileBodyMargin);
+    height: 1px;
+    
+    background-color: var(--rufous-500);
+  }
+}
+
 .pastoral__cards--catechism {
   width: toRem(180);
   height: toRem(200);
