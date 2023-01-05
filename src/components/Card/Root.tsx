@@ -6,7 +6,7 @@ type Props = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElem
 }
 
 function Root({ children, ...props }: Props) {
-  return React.createElement('article', { ...props }, children);
+  return React.createElement('article', { ...props, 'data-testid': 'card-root' }, children);
 }
 
 Root.defaultProps = { 'data-testid': null };
