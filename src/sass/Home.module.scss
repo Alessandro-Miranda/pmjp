@@ -87,23 +87,13 @@
   position: relative;
   padding-top: toRem(40);
   padding-bottom: toRem(120);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .section__title {
   margin: 0 $mobileBodyMargin toRem(56);
   max-width: toRem(235);
-}
-
-.section__scrollArea__root {
-  width: 100%;
-  height: 62vh;
-  overflow: hidden;
-  scroll-behavior: smooth;
-}
-
-.section__scrollArea__viewport {
-  width: 100%;
-  height: 100%;
 }
 
 .section__article {
@@ -125,6 +115,87 @@
   font-size: toRem($textSizeLarge);
   
   margin: 0 0 $mobileBodyMargin * 2;
+}
+
+/* Variable used in section__schedules__card and section__schedules__card__decoration */
+$cardWidth: toRem(200);
+$cardsGap: $mobileBodyMargin * 2;
+
+:export {
+  cardWidth: $cardWidth;
+  cardsGap: $cardsGap;
+}
+
+.section__schedules__container {
+  width: max-content;
+  display: flex;
+  gap: $cardsGap;
+}
+
+.section__schedules__card__decoration--beforeAfter {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: toRem(37);
+  height: 7px;
+  background-color: var(--rufous-500);
+  z-index: 1;
+}
+
+.section__schedules__card {
+  width: $cardWidth;
+  height: toRem(120);
+  margin-top: toRem(50);
+  padding: $mobileBodyMargin * 2;
+
+  box-shadow: 0px 0 5px 1px rgba(0, 0, 0, .1);
+  border-radius: toRem(20);
+  background-color: var(--ivory-100);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $mobileBodyMargin;
+  position: relative;
+
+  & > img {
+    display: block;
+    width: toRem(22);
+    height: auto;
+  }
+
+  & > p {
+    text-transform: capitalize;
+  }
+
+  @include schedules-card-decoration(before, top);
+  @include schedules-card-decoration(after, bottom);
+
+  &:first-of-type::before {
+    display: none;
+  }
+
+  &:last-of-type::after {
+    display: none;
+  }
+}
+
+.section__schedules__card__decoration {
+  width: toRem(300);
+  height: toRem(120);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: toRem(300);
+    height: toRem(120);
+    border: 2px solid rgba(194, 193, 165, .25);
+    border-color: rgba(194, 193, 165, .25) transparent transparent transparent;
+    border-radius: 50%/100% 100% 0 0;
+    transform: rotate(180deg) translateX(calc($cardWidth / 2 * -1));
+  }
 }
 
 .section--communities {
