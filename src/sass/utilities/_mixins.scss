@@ -30,3 +30,17 @@
     right: $mobileBodyMargin;
   }
 }
+
+@mixin schedules-card-decoration($pseudoElement, $position) {
+  &::#{$pseudoElement} {
+    content: '';
+    position: absolute;
+    left: 50%;
+    #{$position}: -7px;
+    transform: translateX(-50%);
+    width: toRem(37);
+    height: 7px;
+    background-color: var(--rufous-500);
+    z-index: 1;
+  }
+}
