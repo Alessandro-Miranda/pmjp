@@ -1,12 +1,14 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import * as Accordion from '@radix-ui/react-accordion';
-import * as ScrollArea from '@radix-ui/react-scroll-area';
 import * as Separator from '@radix-ui/react-separator';
+import { motion } from 'framer-motion';
 
 import Email from '@Icons/email.svg';
 import Location from '@Icons/location-white.svg';
+import MassIcon from '@Icons/mass.svg';
 import MobilePhone from '@Icons/mobile.svg';
 import Open from '@Icons/open.svg';
 import CatechismPastoral from '@Images/catechism.jpg';
@@ -26,9 +28,18 @@ import CommunitySchedules from '@Components/CommunitySchedules';
 import HowToGet from '@Components/HowToGetButton';
 
 import styles from '@Styles/Home.module.scss';
-import Link from 'next/link';
 
 export default function Home() {
+  const replaceCSSMeasure = (value: string, valueSearched: string) => value.replace(valueSearched, '');
+
+  const calcMaxLeftDrag = (childrenCount: number) => {
+    const CARD_WIDTH = Number(replaceCSSMeasure(styles.cardWidth, 'rem'));
+    const CARD_GAP = Number(replaceCSSMeasure(styles.cardsGap, 'px'));
+    const PIXEL_WIDTH = 16;
+
+    return (CARD_WIDTH * PIXEL_WIDTH + CARD_GAP) * (childrenCount - 1) * -1;
+  };
+
   return (
     <>
       <Head>
@@ -104,76 +115,149 @@ export default function Home() {
             className={styles.content__separator}
           />
 
-          <ScrollArea.Root className={styles.section__scrollArea__root}>
-            <ScrollArea.Viewport className={styles.section__scrollArea__viewport}>
-              <article
-                className={styles.section__article}
-                role="contentinfo"
-                aria-label="História da paróquia"
-              >
-                <ArticleNumber number={1} />
+          <article
+            className={styles.section__article}
+            role="contentinfo"
+            aria-label="História da paróquia"
+          >
+            <ArticleNumber number={1} />
 
-                <div className={styles.section__article__text__container}>
-                  <Typography
-                    variant="h2"
-                    className={styles.section__article__title}
+            <div className={styles.section__article__text__container}>
+              <Typography
+                variant="h2"
+                className={styles.section__article__title}
+              >
+                sobre a paróquia
+              </Typography>
+
+              <Typography>
+                {'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.'}
+              </Typography>
+            </div>
+          </article>
+
+          <article
+            className={styles.section__article}
+            id="schedules"
+            role="contentinfo"
+            aria-label="Horários das atividades da paróquia (missas, terços, grupos de oração etc.)"
+          >
+            <ArticleNumber number={2} />
+
+            <div className={styles.section__article__text__container}>
+              <Typography variant="h2" className={styles.section__article__title}>
+                horários
+              </Typography>
+
+              <motion.div
+                drag="x"
+                whileDrag={{ scale: 0.90 }}
+                dragConstraints={{
+                  left: calcMaxLeftDrag(5),
+                  right: 0,
+                }}
+                style={{
+                  paddingLeft: '5px',
+                  paddingBottom: '10px',
+                }}
+              >
+                <div className={styles.section__schedules__container}>
+                  <Card.Root
+                    className={styles.section__schedules__card}
+                    aria-label="Horário de missas e celebrações"
                   >
-                    sobre a paróquia
-                  </Typography>
+                    <Card.Icon
+                      src={MassIcon}
+                      alt="Horário das missas"
+                      loading="lazy"
+                    />
+                    <Typography>
+                      missas
+                    </Typography>
+                  </Card.Root>
 
-                  <Typography>
-                    {'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.'}
-                  </Typography>
+                  <Card.Root
+                    className={styles.section__schedules__card}
+                    aria-label="Horário do grupo de oração"
+                  >
+                    <Card.Icon
+                      src={MassIcon}
+                      alt="Horário do grupo de oração"
+                      loading="lazy"
+                    />
+                    <Typography>
+                      grupo de oração
+                    </Typography>
+                  </Card.Root>
+
+                  <Card.Root
+                    className={styles.section__schedules__card}
+                    aria-label="Horário oração do santo terço"
+                  >
+                    <Card.Icon
+                      src={MassIcon}
+                      alt="Horário oração do santo terço"
+                      loading="lazy"
+                    />
+                    <Typography>
+                      Oração do Terço
+                    </Typography>
+                  </Card.Root>
+
+                  <Card.Root
+                    className={styles.section__schedules__card}
+                    aria-label="Horário das mil ave marias"
+                  >
+                    <Card.Icon
+                      src={MassIcon}
+                      alt="Horário das mil ave marias"
+                      loading="lazy"
+                    />
+                    <Typography>
+                      Mil Ave Marias
+                    </Typography>
+                  </Card.Root>
+
+                  <Card.Root
+                    className={styles.section__schedules__card}
+                    aria-label="Horário de atendimento da secretaria"
+                  >
+                    <Card.Icon
+                      src={MassIcon}
+                      alt="Horário de atendimento da secretaria"
+                      loading="lazy"
+                    />
+                    <Typography>
+                      secretaria
+                    </Typography>
+                  </Card.Root>
                 </div>
-              </article>
+              </motion.div>
+            </div>
+          </article>
 
-              <article
-                className={styles.section__article}
-                id="schedules"
-                role="contentinfo"
-                aria-label="Horários das atividades da paróquia (missas, terços, grupos de oração etc.)"
-              >
-                <ArticleNumber number={2} />
+          <article
+            className={styles.section__article}
+            id="localization"
+            role="contentinfo"
+            aria-label="Localização da paróquia: endereço e link para Google Maps"
+          >
+            <ArticleNumber number={3} />
 
-                <div className={styles.section__article__text__container}>
-                  <Typography variant="h2" className={styles.section__article__title}>
-                    horários
-                  </Typography>
+            <div className={styles.section__article__text__container}>
+              <Typography variant="h2" className={styles.section__article__title}>
+                localização
+              </Typography>
 
-                  <Typography>
-                    {'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.'}
-                  </Typography>
-                </div>
-              </article>
+              <Address
+                address="Rua Luiz de Vasconscelos, 100. Diadema - SP."
+              />
 
-              <article
-                className={styles.section__article}
-                id="localization"
-                role="contentinfo"
-                aria-label="Localização da paróquia: endereço e link para Google Maps"
-              >
-                <ArticleNumber number={3} />
-
-                <div className={styles.section__article__text__container}>
-                  <Typography variant="h2" className={styles.section__article__title}>
-                    localização
-                  </Typography>
-
-                  <Address
-                    address="Rua Luiz de Vasconscelos, 100. Diadema - SP."
-                  />
-
-                  <HowToGet
-                    mapsLink="https://www.google.com/maps/dir/?api=1&destination=R.+Luiz+de+Vasconcelos,+100+-+Vila+Nogueira,+Diadema+-+SP,+09960-250"
-                  />
-                </div>
-              </article>
-            </ScrollArea.Viewport>
-
-            <ScrollArea.Scrollbar orientation="vertical">
-              <ScrollArea.ScrollAreaThumb />
-            </ScrollArea.Scrollbar>
-          </ScrollArea.Root>
+              <HowToGet
+                mapsLink="https://www.google.com/maps/dir/?api=1&destination=R.+Luiz+de+Vasconcelos,+100+-+Vila+Nogueira,+Diadema+-+SP,+09960-250"
+              />
+            </div>
+          </article>
         </section>
 
         <section
@@ -394,6 +478,7 @@ export default function Home() {
               src={CatechismPastoral}
               alt="Catequese e crisma de jovens e adultos"
               className={`${styles.pastorals__card__image} ${styles['pastoral__cards--catechism']}`}
+              loading="lazy"
             />
             <Typography className={styles.pastorals__card__text}>
               catequese
@@ -407,6 +492,7 @@ export default function Home() {
               src={WelcomedPastoral}
               alt="Pastoral da acolhida"
               className={`${styles.pastorals__card__image} ${styles['pastoral__cards--welcomed']}`}
+              loading="lazy"
             />
             <Typography className={styles.pastorals__card__text}>
               acolhida
@@ -418,6 +504,7 @@ export default function Home() {
               src={MusicPastoral}
               alt="Pastoral da música"
               className={`${styles.pastorals__card__image} ${styles['pastoral__cards--music']}`}
+              loading="lazy"
             />
             <Typography className={styles.pastorals__card__text}>
               música
@@ -429,6 +516,7 @@ export default function Home() {
               src={EucharistPastoral}
               alt="Ministério da eucaristia"
               className={styles.pastorals__card__image}
+              loading="lazy"
             />
             <Typography className={styles.pastorals__card__text}>
               eucaristia
@@ -440,6 +528,7 @@ export default function Home() {
               src={LiturgyPastoral}
               alt="Liturgia"
               className={`${styles.pastorals__card__image} ${styles['pastoral__cards--liturgy']}`}
+              loading="lazy"
             />
             <Typography className={styles.pastorals__card__text}>
               música
