@@ -115,6 +115,7 @@ A ser definido
 - [ESLint - Airbnb style](https://eslint.org/)
 - [Figma](https://www.figma.com/)
 - [Jest](https://jestjs.io/pt-BR/)
+- [Framer Motion](https://www.framer.com/motion/)
 - [Next.js](https://nextjs.org/)
 - [Radix UI](https://www.radix-ui.com/)
 - [React Testing Library](https://testing-library.com/)
