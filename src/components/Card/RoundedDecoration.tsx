@@ -29,17 +29,16 @@ function RoundedDecoration({ className }: Props) {
       animate
       onViewportEnter={() => controls.start('visible')}
       className={className}
+      aria-hidden
     >
       <motion.svg
-        width={300}
-        height={200}
-        viewBox="0 0 600 600"
+        viewBox="0 0 300 300"
         initial="hidden"
         animate={controls}
         ref={circleRef}
       >
         <motion.circle
-          cx={200}
+          cx="50%"
           cy={0}
           r="50%"
           stroke="var(--sage-500)"
