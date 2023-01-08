@@ -151,86 +151,110 @@ export default function Home() {
 
               <motion.div
                 drag="x"
-                whileDrag={{ scale: 0.90 }}
+                whileDrag={{ scale: 0.95 }}
                 dragConstraints={{
                   left: calcMaxLeftDrag(5),
                   right: 0,
                 }}
-                style={{
-                  paddingLeft: '5px',
-                  paddingBottom: '10px',
-                }}
               >
                 <div className={styles.section__schedules__container}>
-                  <Card.Root
-                    className={styles.section__schedules__card}
-                    aria-label="Horário de missas e celebrações"
-                  >
-                    <Card.Icon
-                      src={MassIcon}
-                      alt="Horário das missas"
-                      loading="lazy"
+                  <motion.div className={styles.section__schedules__card__container}>
+                    <Card.Root
+                      className={styles.section__schedules__card}
+                      aria-label="Horário de missas e celebrações"
+                    >
+                      <Card.Icon
+                        src={MassIcon}
+                        alt="Horário das missas"
+                        loading="lazy"
+                      />
+                      <Typography>
+                        missas
+                      </Typography>
+                    </Card.Root>
+                    <Card.RoundedDecoration
+                      className={styles.section__schedules__card__rounded__decoration}
                     />
-                    <Typography>
-                      missas
-                    </Typography>
-                  </Card.Root>
+                  </motion.div>
 
-                  <Card.Root
-                    className={styles.section__schedules__card}
-                    aria-label="Horário do grupo de oração"
-                  >
-                    <Card.Icon
-                      src={MassIcon}
-                      alt="Horário do grupo de oração"
-                      loading="lazy"
-                    />
-                    <Typography>
-                      grupo de oração
-                    </Typography>
-                  </Card.Root>
+                  <motion.div className={styles.section__schedules__card__container}>
+                    <Card.Root
+                      className={styles.section__schedules__card}
+                      aria-label="Horário do grupo de oração"
+                    >
+                      <Card.Icon
+                        src={MassIcon}
+                        alt="Horário do grupo de oração"
+                        loading="lazy"
+                      />
+                      <Typography>
+                        grupo de oração
+                      </Typography>
+                    </Card.Root>
 
-                  <Card.Root
-                    className={styles.section__schedules__card}
-                    aria-label="Horário oração do santo terço"
-                  >
-                    <Card.Icon
-                      src={MassIcon}
-                      alt="Horário oração do santo terço"
-                      loading="lazy"
+                    <Card.RoundedDecoration
+                      className={styles.section__schedules__card__rounded__decoration}
                     />
-                    <Typography>
-                      Oração do Terço
-                    </Typography>
-                  </Card.Root>
+                  </motion.div>
 
-                  <Card.Root
-                    className={styles.section__schedules__card}
-                    aria-label="Horário das mil ave marias"
-                  >
-                    <Card.Icon
-                      src={MassIcon}
-                      alt="Horário das mil ave marias"
-                      loading="lazy"
-                    />
-                    <Typography>
-                      Mil Ave Marias
-                    </Typography>
-                  </Card.Root>
+                  <motion.div className={styles.section__schedules__card__container}>
+                    <Card.Root
+                      className={styles.section__schedules__card}
+                      aria-label="Horário oração do santo terço"
+                    >
+                      <Card.Icon
+                        src={MassIcon}
+                        alt="Horário oração do santo terço"
+                        loading="lazy"
+                      />
+                      <Typography>
+                        Oração do Terço
+                      </Typography>
+                    </Card.Root>
 
-                  <Card.Root
-                    className={styles.section__schedules__card}
-                    aria-label="Horário de atendimento da secretaria"
-                  >
-                    <Card.Icon
-                      src={MassIcon}
-                      alt="Horário de atendimento da secretaria"
-                      loading="lazy"
+                    <Card.RoundedDecoration
+                      className={styles.section__schedules__card__rounded__decoration}
                     />
-                    <Typography>
-                      secretaria
-                    </Typography>
-                  </Card.Root>
+                  </motion.div>
+
+                  <motion.div className={styles.section__schedules__card__container}>
+                    <Card.Root
+                      className={styles.section__schedules__card}
+                      aria-label="Horário das mil ave marias"
+                    >
+                      <Card.Icon
+                        src={MassIcon}
+                        alt="Horário das mil ave marias"
+                        loading="lazy"
+                      />
+                      <Typography>
+                        Mil Ave Marias
+                      </Typography>
+                    </Card.Root>
+
+                    <Card.RoundedDecoration
+                      className={styles.section__schedules__card__rounded__decoration}
+                    />
+                  </motion.div>
+
+                  <motion.div className={styles.section__schedules__card__container}>
+                    <Card.Root
+                      className={styles.section__schedules__card}
+                      aria-label="Horário de atendimento da secretaria"
+                    >
+                      <Card.Icon
+                        src={MassIcon}
+                        alt="Horário de atendimento da secretaria"
+                        loading="lazy"
+                      />
+                      <Typography>
+                        secretaria
+                      </Typography>
+                    </Card.Root>
+                    <Card.RoundedDecoration
+                      className={styles.section__schedules__card__rounded__decoration}
+                    />
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
