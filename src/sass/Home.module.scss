@@ -473,7 +473,7 @@ $cardsGap: $mobileBodyMargin * 2;
   display: block;
   width: toRem(25);
   height: auto;
-  margin-right: $mobileBodyMargin;
+  margin-right: $mobileBodyMargin * 2;
 }
 
 .footer__address__icons--mobile {
@@ -486,6 +486,7 @@ $cardsGap: $mobileBodyMargin * 2;
 .footer__address__icons--email {
   width: auto;
   height: toRem(25);
+  margin-right: 10px;
   
   transform: translateY(10%);
 }
