@@ -100,9 +100,17 @@
   display: flex;
   flex-direction: row;
 
-  padding: 0 $mobileBodyMargin;
-  margin-top: calc($mobileBodyMargin * 2);
-  margin-bottom: toRem(120);
+  padding: 0 $mobileBodyMargin toRem(80);
+  margin-top: toRem(40);
+  margin-bottom: toRem(80);
+
+  border-bottom: 1px solid var(--blackChocolate-500);
+
+  &:last-of-type {
+    border-bottom: unset;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 
 .section__article__text__container {
@@ -130,17 +138,29 @@ $cardsGap: $mobileBodyMargin * 2;
   width: max-content;
   display: flex;
   gap: $cardsGap;
+  margin: toRem(120) 0;
+
+  & > div:first-of-type article::before {
+    display: none;
+  }
+
+  & > div:last-of-type article::after {
+    display: none;
+  }
 }
 
-.section__schedules__card__decoration--beforeAfter {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: toRem(37);
-  height: 7px;
-  background-color: var(--rufous-500);
-  z-index: 1;
+.section__schedules__card__container {
+  position: relative;
+  width: max-content;
+
+  &:nth-child(even) .section__schedules__card__rounded__decoration {
+    top: -100%;
+    transform: rotate(180deg) translateY(-30%);
+  }
+
+  &:last-of-type .section__schedules__card__rounded__decoration {
+    display: none;
+  }
 }
 
 .section__schedules__card {
@@ -167,18 +187,12 @@ $cardsGap: $mobileBodyMargin * 2;
 
   & > p {
     text-transform: capitalize;
+    font-family: $titleFont;
+    font-size: toRem($textSizeLarge);
   }
 
   @include schedules-card-decoration(before, top);
   @include schedules-card-decoration(after, bottom);
-
-  &:first-of-type::before {
-    display: none;
-  }
-
-  &:last-of-type::after {
-    display: none;
-  }
 }
 
 .section__schedules__card__decoration {
@@ -196,6 +210,13 @@ $cardsGap: $mobileBodyMargin * 2;
     border-radius: 50%/100% 100% 0 0;
     transform: rotate(180deg) translateX(calc($cardWidth / 2 * -1));
   }
+}
+
+.section__schedules__card__rounded__decoration {
+  position: absolute;
+  left: 50%;
+  width: calc(100% + $cardsGap);
+  height: 100%;
 }
 
 .section--communities {
