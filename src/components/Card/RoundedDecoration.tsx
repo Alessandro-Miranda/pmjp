@@ -12,7 +12,7 @@ function RoundedDecoration({ className }: Props) {
   const drawDecoration: AnimationProps['variants'] = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: (i) => {
-      const delay = 1 + i * 0.5;
+      const delay = i * 0.5;
       return {
         pathLength: 1,
         opacity: 1,
