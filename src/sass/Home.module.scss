@@ -527,8 +527,9 @@ $cardsGap: $mobileBodyMargin * 2;
       margin-bottom: 0;
     }
   }
-}
 
-.footer__copy__developer {
-  text-decoration: underline;
+  & a {
+    border-bottom: 1px dotted var(--ivory-100);
+    font-weight: 600;
+  }
 }
