@@ -21,7 +21,8 @@
       "@Icons/*": ["public/icons/*"],
       "@Logos/*": ["public/*"],
       "@Images/*": ["public/images/*"],
-      "@Styles/*": ["src/sass/*"]
+      "@Styles/*": ["src/sass/*"],
+      "@Mocks/*": ["__mocks__/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "@types/*.d.ts"],
