@@ -8,7 +8,7 @@ const CONFIG = {
   clearMocks: true,
   collectCoverage: true,
   coverageDirectory: 'coverage',
-  coverageProvider: 'v8',
+  coverageProvider: 'babel',
   coverageReporters: ['json', 'text', 'lcov', 'clover'],
   coverageThreshold: {
     global: {
@@ -25,6 +25,7 @@ const CONFIG = {
     '\\.scss$': '<rootDir>/__mocks__/styleMock.js',
     '^@(Logos|Icons|Images)\/(.*)': '<rootDir>/__mocks__/imageMock.js',
     '^@Components\/(.*)': '<rootDir>/src/components/$1',
+    '^@Mocks\/(.*)': '<rootDir>/__mocks__/$1',
   },
   transform: {
     '^.+\\.(ts|tsx|js)$': [
