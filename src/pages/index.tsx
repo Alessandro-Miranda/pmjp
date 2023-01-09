@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import * as Accordion from '@radix-ui/react-accordion';
 import * as Separator from '@radix-ui/react-separator';
-import { motion } from 'framer-motion';
+import { AnimationProps, motion } from 'framer-motion';
 
 import Email from '@Icons/email.svg';
 import Location from '@Icons/location-white.svg';
@@ -38,6 +38,22 @@ export default function Home() {
     const PIXEL_WIDTH = 16;
 
     return (CARD_WIDTH * PIXEL_WIDTH + CARD_GAP) * (childrenCount - 1) * -1;
+  };
+
+  const schedulesCardAnimationInitial: AnimationProps['initial'] = {
+    opacity: 0,
+    transform: 'translateY(20%)',
+  };
+
+  const schedulesCardAnimationVariants = {
+    onScreen: {
+      opacity: 1,
+      transform: 'translateY(0%)',
+      transition: {
+        opacity: { delay: 0.1, duration: 0.2, type: 'spring' },
+        transform: { delay: 0.4, duration: 0.9, type: 'spring' },
+      },
+    },
   };
 
   return (
@@ -162,7 +178,13 @@ export default function Home() {
                 aria-orientation="horizontal"
                 className={styles.section__schedules__container}
               >
-                <motion.div className={styles.section__schedules__card__container}>
+                <motion.div
+                  className={styles.section__schedules__card__container}
+                  initial={schedulesCardAnimationInitial}
+                  whileInView="onScreen"
+                  variants={schedulesCardAnimationVariants}
+                  viewport={{ once: true }}
+                >
                   <Card.Root
                     className={styles.section__schedules__card}
                     aria-label="Horário de missas e celebrações"
@@ -181,7 +203,13 @@ export default function Home() {
                   />
                 </motion.div>
 
-                <motion.div className={styles.section__schedules__card__container}>
+                <motion.div
+                  className={styles.section__schedules__card__container}
+                  initial={schedulesCardAnimationInitial}
+                  whileInView="onScreen"
+                  variants={schedulesCardAnimationVariants}
+                  viewport={{ once: true }}
+                >
                   <Card.Root
                     className={styles.section__schedules__card}
                     aria-label="Horário do grupo de oração"
@@ -201,7 +229,13 @@ export default function Home() {
                   />
                 </motion.div>
 
-                <motion.div className={styles.section__schedules__card__container}>
+                <motion.div
+                  className={styles.section__schedules__card__container}
+                  initial={schedulesCardAnimationInitial}
+                  whileInView="onScreen"
+                  variants={schedulesCardAnimationVariants}
+                  viewport={{ once: true }}
+                >
                   <Card.Root
                     className={styles.section__schedules__card}
                     aria-label="Horário oração do santo terço"
@@ -221,7 +255,13 @@ export default function Home() {
                   />
                 </motion.div>
 
-                <motion.div className={styles.section__schedules__card__container}>
+                <motion.div
+                  className={styles.section__schedules__card__container}
+                  initial={schedulesCardAnimationInitial}
+                  whileInView="onScreen"
+                  variants={schedulesCardAnimationVariants}
+                  viewport={{ once: true }}
+                >
                   <Card.Root
                     className={styles.section__schedules__card}
                     aria-label="Horário das mil ave marias"
@@ -241,7 +281,13 @@ export default function Home() {
                   />
                 </motion.div>
 
-                <motion.div className={styles.section__schedules__card__container}>
+                <motion.div
+                  className={styles.section__schedules__card__container}
+                  initial={schedulesCardAnimationInitial}
+                  whileInView="onScreen"
+                  variants={schedulesCardAnimationVariants}
+                  viewport={{ once: true }}
+                >
                   <Card.Root
                     className={styles.section__schedules__card}
                     aria-label="Horário de atendimento da secretaria"
