@@ -1,6 +1,6 @@
 @mixin border-default {
   border: 2px solid var(--blackChocolate-500);
-  border-radius: toRem(20);
+  border-radius: toRem(10);
   transition: border 0.2s ease-in-out;
 
   &:hover {
