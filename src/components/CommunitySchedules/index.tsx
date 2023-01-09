@@ -15,7 +15,7 @@ function CommunitySchedules({ schedules }: Props) {
         className={styles.schedule__title}
         data-testid="schedules-title"
       >
-        Celebrações
+        Missas
       </Typography>
 
       {schedules.map(({ time, weekday }) => (
