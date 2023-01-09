@@ -54,3 +54,61 @@
     background-color: var(--rufous-500);
   }
 }
+
+.section__schedules__card__container {
+  position: relative;
+  width: max-content;
+}
+
+.section__schedules__card {
+  width: 200px;
+  height: toRem(120);
+  margin-top: toRem(50);
+  padding: 20px;
+
+  box-shadow: 0px 0 5px 1px rgba(0, 0, 0, .1);
+  border-radius: toRem(20);
+  background-color: var(--ivory-100);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $mobileBodyMargin;
+  position: relative;
+
+  & > img {
+    display: block;
+    width: toRem(22);
+    height: auto;
+  }
+
+  & > p {
+    text-transform: capitalize;
+    font-family: $titleFont;
+    font-size: toRem($textSizeLarge);
+  }
+}
+
+.section__schedules__card__decoration {
+  width: toRem(300);
+  height: toRem(120);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: toRem(300);
+    height: toRem(120);
+    border: 2px solid rgba(194, 193, 165, .25);
+    border-color: rgba(194, 193, 165, .25) transparent transparent transparent;
+    border-radius: 50%/100% 100% 0 0;
+    transform: rotate(180deg) translateX(calc(200 / 2 * -1));
+  }
+}
+
+.section__schedules__card__rounded__decoration {
+  position: absolute;
+  left: 50%;
+  width: calc(100% + 40px);
+  height: 100%;
+}
