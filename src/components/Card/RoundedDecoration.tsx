@@ -2,6 +2,9 @@ import { AnimationProps, motion, useAnimation } from 'framer-motion';
 import { useRef } from 'react';
 
 type Props = {
+  /**
+   * Style class apllyed to component container.
+   */
   className?: string;
 }
 
@@ -9,6 +12,7 @@ function RoundedDecoration({ className }: Props) {
   const circleRef = useRef<SVGSVGElement>(null);
   const controls = useAnimation();
 
+  /* istanbul ignore next */
   const drawDecoration: AnimationProps['variants'] = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: (i) => {
@@ -30,6 +34,7 @@ function RoundedDecoration({ className }: Props) {
       onViewportEnter={() => controls.start('visible')}
       className={className}
       aria-hidden
+      data-testid="card-rounded-decoration"
     >
       <motion.svg
         viewBox="0 0 300 300"
