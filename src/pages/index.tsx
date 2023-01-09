@@ -45,6 +45,9 @@ export default function Home() {
       <Head>
         <meta name="theme-color" content="#9c0701" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#9c0701" />
+        <meta name="description" content="A Paróquia Menino Jesus de Praga, localizada no bairro Marilene, em Diadema, é uma paróquia que, jutamente às suas 6 comunidades, têm a missão de anunciar a palavra de Deus e evangelizar através de missas, grupos de oração, oração do terço, catequese e outras atividades religiosas que acontecem diariamente em diversos horários." />
+
+        <title>Paróquia Menino Jesus de Praga | Institucional</title>
       </Head>
       <header className={styles.header}>
         <div className={styles.header__navbar}>
@@ -619,17 +622,21 @@ export default function Home() {
             {new Date().getFullYear()}
             . All rights reserved
           </Typography>
-          <Typography variant="span">
+
+          <Typography variant="span" id="developer-attribution">
             developed by
             {' '}
-            <Typography variant="span" className={styles.footer__copy__developer}>
+            <Link href="https://github.com/" aria-labelledby="developer-attribution">
               Alessandro Miranda
-            </Typography>
+            </Link>
           </Typography>
-          <Typography variant="span">
+
+          <Typography variant="span" id="images-attribution">
             images by
             {' '}
-            <cite>freepik</cite>
+            <Link href="https://br.freepik.com/" aria-labelledby="images-attribution">
+              freepik
+            </Link>
           </Typography>
         </small>
       </footer>
