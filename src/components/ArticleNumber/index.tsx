@@ -2,6 +2,9 @@ import Typography from '@Components/Typography';
 import styles from './styles.module.scss';
 
 type Props = {
+  /**
+   * Representative number that enumarate the articles as a list.
+   */
   number: number;
 }
 
