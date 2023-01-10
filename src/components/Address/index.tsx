@@ -5,9 +5,21 @@ import Location from '@Icons/location.svg';
 import styles from './styles.module.scss';
 
 type Props = {
+  /**
+   * Church full address.
+   */
   address: string;
+  /**
+   * *(optional)* Custom icon to be displayed.
+   */
   icon?: string;
+  /**
+   * *(optional)* Custom style to icon.
+   */
   iconClass?: string;
+  /**
+   * *(optional)* Custom style to address text.
+   */
   textClass?: string;
 }
 
