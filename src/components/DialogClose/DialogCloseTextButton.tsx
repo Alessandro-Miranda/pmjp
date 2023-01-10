@@ -9,7 +9,7 @@ type Props = {
 
 function DialogCloseTextButton({ children, className }: Props) {
   return (
-    <Close className={`${styles.dialog__close} ${className}`}>
+    <Close className={`${styles.dialog__close} ${className}`} data-testid="dialog-close-text">
       { children || 'Fechar' }
     </Close>
   );
