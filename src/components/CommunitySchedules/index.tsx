@@ -5,7 +5,13 @@ import Typography from '@Components/Typography';
 import styles from './styles.module.scss';
 
 type Props = {
+  /**
+   * Schedules that will be displayed as table.
+   */
   schedules: { weekday: string; time: string; }[];
+  /**
+   * *(optional)* Short title about what is the schedules.
+   */
   title?: string;
 }
 
