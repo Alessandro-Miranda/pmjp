@@ -5,13 +5,14 @@ export default {
   title: 'Components/CommunityScheules',
   component: CommunitySchedules,
   args: {
+    title: 'Missas',
     schedules: [
       {
         weekday: 'Quarta-feira', time: '19:30',
       },
       {
         weekday: 'Domingo', time: '10:00',
-      },
+      }
     ],
   },
   parameters: {
