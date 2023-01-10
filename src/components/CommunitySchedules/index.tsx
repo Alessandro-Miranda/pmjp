@@ -6,17 +6,21 @@ import styles from './styles.module.scss';
 
 type Props = {
   schedules: { weekday: string; time: string; }[];
+  title?: string;
 }
 
-function CommunitySchedules({ schedules }: Props) {
+function CommunitySchedules({ schedules, title }: Props) {
   return (
     <>
-      <Typography
-        className={styles.schedule__title}
-        data-testid="schedules-title"
-      >
-        Missas
-      </Typography>
+
+      { title ? (
+        <Typography
+          className={styles.schedule__title}
+          data-testid="schedules-title"
+        >
+          {title}
+        </Typography>
+      ) : null}
 
       {schedules.map(({ time, weekday }) => (
         <div
@@ -38,5 +42,7 @@ function CommunitySchedules({ schedules }: Props) {
     </>
   );
 }
+
+CommunitySchedules.defaultProps = { title: null };
 
 export default CommunitySchedules;
