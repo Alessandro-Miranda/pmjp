@@ -61,7 +61,7 @@ function Typography({
       'data-testid': testid,
       ...props,
     },
-    children,
+    children
   );
 }
 
