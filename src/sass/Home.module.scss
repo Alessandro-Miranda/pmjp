@@ -17,6 +17,10 @@
   justify-content: space-between;
   align-items: center;
   padding: $mobileBodyMargin;
+
+  @media screen and (min-width: $largeScreen) {
+    padding-inline: $desktopBodyMargin;
+  }
 }
 
 .header__hero__container {
