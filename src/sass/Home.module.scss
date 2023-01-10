@@ -26,6 +26,31 @@
 .header__hero__container {
   padding: toRem(20) $mobileBodyMargin toRem(84);
   position: relative;
+
+  @media screen and (min-width: $largeScreen) {
+    padding: toRem(40) $desktopBodyMargin toRem(200);
+  }
+}
+
+.header__hero__churchName {
+  @media screen and (max-width: $mediumScreen) {
+    display: none;
+  }
+
+  position: absolute;
+  max-width: toRem(255);
+  
+  font-size: toRem($titleSizeLarge);
+  font-family: $titleFont;
+  font-weight: var(--fontSemibold);
+  text-transform: uppercase;
+  color: var(--sage-500);
+  opacity: .3;
+
+  & span {
+    display: block;
+    margin-bottom: toRem(20);
+  }
 }
 
 .header__hero__banner {
@@ -42,6 +67,14 @@
   top: toRem(20);
   right: 0;
   z-index: -2;
+
+  @media screen and (min-width: $largeScreen) {
+    width: toRem(510);
+    height: toRem(440);
+    top: toRem(40);
+
+    background-position-x: -$desktopBodyMargin;
+  }
 }
 
 .header__hero__citation {
@@ -52,28 +85,52 @@
   width: calc(100vw - $mobileBodyMargin * 2);
   max-width: $smallScreen;
   margin: toRem(84) auto toRem(50);
+
+  @media screen and (min-width: $largeScreen) {
+    font-size: toRem($titleSizeSmall);
+    width: max-content;
+    max-width: toRem(848);
+  }
+}
+
+@mixin citationDecorationBackground {
+  content: '';
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  background-image: url('/images/brush-line-1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 70%;
 }
 
 .header__hero__citation__decoration {
   font-weight: var(--fontSemibold);
   font-style: italic;
+
+  @media screen and (min-width: $largeScreen) {
+    position: relative;
+
+    &::before {
+      @include citationDecorationBackground;
+      left: 25%;
+      width: 100%;
+      background-position-y: 175%;
+    }
+  }
 }
 
 .header__hero__citation__decoration--mobile {
   position: relative;
 
   &::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
+    @include citationDecorationBackground;
     bottom: 0;
     width: 110%;
-    height: 100%;
-
-    background-image: url('/images/brush-line-1.png');
-    background-repeat: no-repeat;
-    background-size: 100% 70%;
     background-position-y: 150%;
+    
+    @media screen and (min-width: $largeScreen) {
+      background-image: none;
+    }
   }
 }
 
@@ -83,6 +140,57 @@
   font-size: toRem(32);
   font-weight: var(--fontRegular);
   text-align: center;
+}
+
+@keyframes pumping {
+  from {
+    transform: translateY(-15%) scale(.95);
+  }
+  to {
+    transform: translateY(0%) scale(1);
+  }
+}
+.header__seeMore__button {
+  @media screen and (max-width: $mediumScreen) {
+    display: none;
+  }
+  
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+  bottom: $desktopBodyMargin - 35px;
+  left: $desktopBodyMargin - 35px;
+
+  & img {
+    display: block;
+    width: auto;
+    height: toRem(35);
+    animation: pumping 1s cubic-bezier(.12,.69,.97,.65) infinite alternate;
+  }
+
+  &::before {
+    content: '';
+    width: toRem(37);
+    height: toRem(37);
+    position: absolute;
+    bottom: 0%;
+    left: -50%;
+    transform: translate(55%, 30%);
+    border-radius: 50%;
+    border: 1px solid var(--rufous-500);
+  }
+
+  & span {
+    display: block;
+    width: max-content;
+    height: toRem(16);
+    transform: rotate(-90deg) translate(50%, -75%);
+    
+    font-size: toRem(12);
+    color: var(--rufous-500);
+    font-weight: var(--fontLigth);
+    text-transform: uppercase;
+  }
 }
 
 .section {
