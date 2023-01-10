@@ -125,7 +125,7 @@ A ser definido
 
 ## Licença
 
-O projeto está sob a licença MIT. Você pode consultar o arquio na íntegra [aqui](/LICENSE).
+O projeto está sob a licença MIT. Você pode consultar o arquivo na íntegra [aqui](/LICENSE).
 
 ## Contribuição
 
