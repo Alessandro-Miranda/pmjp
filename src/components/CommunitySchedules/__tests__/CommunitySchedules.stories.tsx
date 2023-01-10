@@ -5,7 +5,6 @@ export default {
   title: 'Components/CommunityScheules',
   component: CommunitySchedules,
   args: {
-    title: 'Missas',
     schedules: [
       {
         weekday: 'Quarta-feira', time: '19:30',
@@ -27,3 +26,9 @@ export default {
 export const Default: ComponentStory<
   typeof CommunitySchedules
 > = (args) => <CommunitySchedules {...args} />;
+
+Default.args = {
+  title: 'Missas',
+};
+
+export const WithoutTitle = Default.bind({});
