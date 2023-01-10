@@ -38,8 +38,15 @@ CloseButtonText.args = {
 export const CustomIcon = Template.bind({});
 CustomIcon.args = {
   customIcon: (
-    <svg width="26" height="48" viewBox="0 0 26 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M24.8779 33.6162L25.6523 34.3259L12.8771 47.1011L0.165771 34.3259L0.940116 33.6162L12.3608 45.0369L12.3608 -5.33063e-07L13.4577 -5.81008e-07L13.4577 45.0369L24.8779 33.6162Z" fill="#9C0701" />
+    <svg
+      width="26"
+      height="48"
+      viewBox="0 0 26 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      data-testid="dialog-close-custom-icon"
+    >
+      <path fillRule="evenodd" clipRule="evenodd" d="M24.8779 33.6162L25.6523 34.3259L12.8771 47.1011L0.165771 34.3259L0.940116 33.6162L12.3608 45.0369L12.3608 -5.33063e-07L13.4577 -5.81008e-07L13.4577 45.0369L24.8779 33.6162Z" fill="#9C0701" />
     </svg>
   ),
 };
