@@ -125,6 +125,79 @@
   margin: 0 0 $mobileBodyMargin * 2;
 }
 
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.section__schedules__dialog__overlay {
+  background-color: rgba(0, 0, 0, .6);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.section__schedules__dialog__content {
+  width: 85vw;
+  min-height: toRem(200);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: $mobileBodyMargin * 2 $mobileBodyMargin;
+  transform: translate(-50%, -50%);
+
+  background-color: var(--ivory-100);
+
+  border-radius: $mobileBodyMargin;
+
+  animation-timing-function: cubic-bezier(.17,.67,.71,.76);
+  animation-duration: .2s;
+  animation-name: contentShow;
+
+  & > h2 {
+    margin-left: 0;
+    font-size: toRem($textSizeLarge);
+    margin-bottom: toRem(20);
+    color: var(--rufous-500);
+    font-size: toRem(35);
+  }
+
+  & > div:last-of-type {
+    margin-bottom: toRem(40);
+  }
+
+  & > div p {
+    font-weight: var(--fontSemibold);
+  }
+}
+
+.section__schedules__dialog__content--masses {
+  & > p {
+    margin-top: 0;
+    color: var(--rufous-500);
+    font-size: toRem(35);
+  }
+
+  & > div {
+    font-weight: var(--fontSemibold);
+  }
+}
+
 /* Variable used in section__schedules__card and section__schedules__card__decoration */
 $cardWidth: toRem(200);
 $cardsGap: $mobileBodyMargin * 2;
@@ -138,7 +211,7 @@ $cardsGap: $mobileBodyMargin * 2;
   width: max-content;
   display: flex;
   gap: $cardsGap;
-  margin: toRem(120) 0;
+  margin: toRem(150) 0 toRem(120);
 
   & > div:first-of-type article::before {
     display: none;
@@ -155,7 +228,7 @@ $cardsGap: $mobileBodyMargin * 2;
 
   &:nth-child(even) .section__schedules__card__rounded__decoration {
     top: -100%;
-    transform: rotate(180deg) translateY(-30%);
+    transform: rotate(180deg);
   }
 
   &:last-of-type .section__schedules__card__rounded__decoration {
@@ -166,7 +239,6 @@ $cardsGap: $mobileBodyMargin * 2;
 .section__schedules__card {
   width: $cardWidth;
   height: toRem(120);
-  margin-top: toRem(50);
   padding: $mobileBodyMargin * 2;
 
   box-shadow: 0px 0 5px 1px rgba(0, 0, 0, .1);
