@@ -71,6 +71,7 @@
     }],
     "import/extensions": ["error", "always", { "tsx": "never", "ts": "never", "js": "never" }],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "comma-dangle": ["error", { "imports": "never", "exports": "never", "objects": "always-multiline" }],
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": "error",
     "@typescript-eslint/no-unused-vars": "error"
