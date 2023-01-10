@@ -7,7 +7,7 @@ type Props = {
    * Button Type that's define which button children to be displayed (text or icon).
    * Default component children is Icon.
    */
-  type: 'text' | 'icon' | null;
+  type?: 'text' | 'icon';
   /**
    * *(optional)* If type is text, it can be passed a custom text that will be displayed.
    */
@@ -57,6 +57,7 @@ DialogClose.defaultProps = {
   className: '',
   customText: null,
   customIcon: null,
+  type: null,
 };
 
 export default DialogClose;
