@@ -1,10 +1,11 @@
+import { AnimationProps, motion } from 'framer-motion';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import * as Accordion from '@radix-ui/react-accordion';
+import * as Dialog from '@radix-ui/react-dialog';
 import * as Separator from '@radix-ui/react-separator';
-import { AnimationProps, motion } from 'framer-motion';
 
 import Email from '@Icons/email.svg';
 import Location from '@Icons/location-white.svg';
@@ -19,6 +20,7 @@ import WelcomedPastoral from '@Images/welcomed.jpg';
 
 import Address from '@Components/Address';
 import ArticleNumber from '@Components/ArticleNumber';
+import * as DialogClose from '@Components/DialogClose';
 import Logo from '@Components/Logo';
 import NavBar from '@Components/NavBar';
 import Typography from '@Components/Typography';
@@ -73,7 +75,7 @@ export default function Home() {
               { href: '#schedules', label: 'horários' },
               { href: '#localization', label: 'localização' },
               { href: '#communities', label: 'comunidades' },
-              { href: '#contact', label: 'contato', hasBorder: true },
+              { href: '#contact', label: 'contato', hasBorder: true }
             ]}
           />
         </div>
@@ -178,133 +180,247 @@ export default function Home() {
                 aria-orientation="horizontal"
                 className={styles.section__schedules__container}
               >
-                <motion.div
-                  className={styles.section__schedules__card__container}
-                  initial={schedulesCardAnimationInitial}
-                  whileInView="onScreen"
-                  variants={schedulesCardAnimationVariants}
-                  viewport={{ once: true }}
-                >
-                  <Card.Root
-                    className={styles.section__schedules__card}
-                    aria-label="Horário de missas e celebrações"
-                  >
-                    <Card.Icon
-                      src={MassIcon}
-                      alt="Horário das missas"
-                      loading="lazy"
-                    />
-                    <Typography>
-                      missas
-                    </Typography>
-                  </Card.Root>
-                  <Card.RoundedDecoration
-                    className={styles.section__schedules__card__rounded__decoration}
-                  />
-                </motion.div>
+                <Dialog.Root>
+                  <Dialog.Trigger asChild>
+                    <motion.div
+                      className={styles.section__schedules__card__container}
+                      initial={schedulesCardAnimationInitial}
+                      whileInView="onScreen"
+                      variants={schedulesCardAnimationVariants}
+                      viewport={{ once: true }}
+                    >
+                      <Card.Root
+                        className={styles.section__schedules__card}
+                        aria-label="Ver horário de missas e celebrações"
+                      >
+                        <Card.Icon
+                          src={MassIcon}
+                          alt="Horário das missas"
+                          loading="lazy"
+                        />
+                        <Typography>
+                          missas
+                        </Typography>
+                      </Card.Root>
+                      <Card.RoundedDecoration
+                        className={styles.section__schedules__card__rounded__decoration}
+                      />
+                    </motion.div>
+                  </Dialog.Trigger>
+                  <Dialog.Portal>
+                    <Dialog.Overlay className={styles.section__schedules__dialog__overlay} />
+                    <Dialog.Content
+                      className={`${styles.section__schedules__dialog__content} ${styles['section__schedules__dialog__content--masses']}`}
+                    >
+                      <CommunitySchedules
+                        title="Missas"
+                        schedules={[
+                          { weekday: 'Segunda-feira', time: '19:30' },
+                          { weekday: 'Quarta-feira', time: '15:00' },
+                          { weekday: 'Quinta-feira', time: '19:30' },
+                          { weekday: 'Sexta-feira', time: '15:00' },
+                          { weekday: 'Sábado', time: '16:00' },
+                          { weekday: 'Domingo', time: '07:00' },
+                          { weekday: 'Domingo', time: '10:00' },
+                          { weekday: 'Domingo', time: '17:00' }
+                        ]}
+                      />
 
-                <motion.div
-                  className={styles.section__schedules__card__container}
-                  initial={schedulesCardAnimationInitial}
-                  whileInView="onScreen"
-                  variants={schedulesCardAnimationVariants}
-                  viewport={{ once: true }}
-                >
-                  <Card.Root
-                    className={styles.section__schedules__card}
-                    aria-label="Horário do grupo de oração"
-                  >
-                    <Card.Icon
-                      src={MassIcon}
-                      alt="Horário do grupo de oração"
-                      loading="lazy"
-                    />
-                    <Typography>
-                      grupo de oração
-                    </Typography>
-                  </Card.Root>
+                      <DialogClose.DialogCloseTextButton />
+                      <DialogClose.DialogCloseIcon />
+                    </Dialog.Content>
+                  </Dialog.Portal>
+                </Dialog.Root>
 
-                  <Card.RoundedDecoration
-                    className={styles.section__schedules__card__rounded__decoration}
-                  />
-                </motion.div>
+                <Dialog.Root>
+                  <Dialog.Trigger asChild>
+                    <motion.div
+                      className={styles.section__schedules__card__container}
+                      initial={schedulesCardAnimationInitial}
+                      whileInView="onScreen"
+                      variants={schedulesCardAnimationVariants}
+                      viewport={{ once: true }}
+                    >
+                      <Card.Root
+                        className={styles.section__schedules__card}
+                        aria-label="Ver horário do grupo de oração"
+                      >
+                        <Card.Icon
+                          src={MassIcon}
+                          alt="Horário do grupo de oração"
+                          loading="lazy"
+                        />
+                        <Typography>
+                          grupo de oração
+                        </Typography>
+                      </Card.Root>
 
-                <motion.div
-                  className={styles.section__schedules__card__container}
-                  initial={schedulesCardAnimationInitial}
-                  whileInView="onScreen"
-                  variants={schedulesCardAnimationVariants}
-                  viewport={{ once: true }}
-                >
-                  <Card.Root
-                    className={styles.section__schedules__card}
-                    aria-label="Horário oração do santo terço"
-                  >
-                    <Card.Icon
-                      src={MassIcon}
-                      alt="Horário oração do santo terço"
-                      loading="lazy"
-                    />
-                    <Typography>
-                      Oração do Terço
-                    </Typography>
-                  </Card.Root>
+                      <Card.RoundedDecoration
+                        className={styles.section__schedules__card__rounded__decoration}
+                      />
+                    </motion.div>
+                  </Dialog.Trigger>
+                  <Dialog.Portal>
+                    <Dialog.Overlay className={styles.section__schedules__dialog__overlay} />
+                    <Dialog.Content className={styles.section__schedules__dialog__content}>
+                      <Dialog.Title>Grupo de Oração</Dialog.Title>
+                      <Dialog.Description>
+                        Venha participar do nosso grupo de oração, um momento de partilha da
+                        palavra, reflexão e oração.
+                      </Dialog.Description>
+                      <CommunitySchedules
+                        title="Horário"
+                        schedules={[{ weekday: 'Terça-feira', time: '19:30' }]}
+                      />
 
-                  <Card.RoundedDecoration
-                    className={styles.section__schedules__card__rounded__decoration}
-                  />
-                </motion.div>
+                      <DialogClose.DialogCloseTextButton />
+                      <DialogClose.DialogCloseIcon />
+                    </Dialog.Content>
+                  </Dialog.Portal>
+                </Dialog.Root>
 
-                <motion.div
-                  className={styles.section__schedules__card__container}
-                  initial={schedulesCardAnimationInitial}
-                  whileInView="onScreen"
-                  variants={schedulesCardAnimationVariants}
-                  viewport={{ once: true }}
-                >
-                  <Card.Root
-                    className={styles.section__schedules__card}
-                    aria-label="Horário das mil ave marias"
-                  >
-                    <Card.Icon
-                      src={MassIcon}
-                      alt="Horário das mil ave marias"
-                      loading="lazy"
-                    />
-                    <Typography>
-                      Mil Ave Marias
-                    </Typography>
-                  </Card.Root>
+                <Dialog.Root>
+                  <Dialog.Trigger asChild>
+                    <motion.div
+                      className={styles.section__schedules__card__container}
+                      initial={schedulesCardAnimationInitial}
+                      whileInView="onScreen"
+                      variants={schedulesCardAnimationVariants}
+                      viewport={{ once: true }}
+                    >
+                      <Card.Root
+                        className={styles.section__schedules__card}
+                        aria-label="Ver horário oração do santo terço"
+                      >
+                        <Card.Icon
+                          src={MassIcon}
+                          alt="Horário oração do santo terço"
+                          loading="lazy"
+                        />
+                        <Typography>
+                          Oração do Terço
+                        </Typography>
+                      </Card.Root>
 
-                  <Card.RoundedDecoration
-                    className={styles.section__schedules__card__rounded__decoration}
-                  />
-                </motion.div>
+                      <Card.RoundedDecoration
+                        className={styles.section__schedules__card__rounded__decoration}
+                      />
+                    </motion.div>
+                  </Dialog.Trigger>
+                  <Dialog.Portal>
+                    <Dialog.Overlay className={styles.section__schedules__dialog__overlay} />
+                    <Dialog.Content className={styles.section__schedules__dialog__content}>
+                      <Dialog.Title>Santo terço</Dialog.Title>
+                      <Dialog.Description>
+                        Venha se fortalecer espiritualmente através da oração do santo terço.
+                      </Dialog.Description>
+                      <CommunitySchedules
+                        title="Horários"
+                        schedules={[
+                          { weekday: 'Quarta-feira (Terço com as crianças)', time: '19:00' },
+                          { weekday: 'Quarta-feira', time: '19:30' }
+                        ]}
+                      />
+                      <DialogClose.DialogCloseTextButton />
+                      <DialogClose.DialogCloseIcon />
+                    </Dialog.Content>
+                  </Dialog.Portal>
+                </Dialog.Root>
 
-                <motion.div
-                  className={styles.section__schedules__card__container}
-                  initial={schedulesCardAnimationInitial}
-                  whileInView="onScreen"
-                  variants={schedulesCardAnimationVariants}
-                  viewport={{ once: true }}
-                >
-                  <Card.Root
-                    className={styles.section__schedules__card}
-                    aria-label="Horário de atendimento da secretaria"
-                  >
-                    <Card.Icon
-                      src={MassIcon}
-                      alt="Horário de atendimento da secretaria"
-                      loading="lazy"
-                    />
-                    <Typography>
-                      secretaria
-                    </Typography>
-                  </Card.Root>
-                  <Card.RoundedDecoration
-                    className={styles.section__schedules__card__rounded__decoration}
-                  />
-                </motion.div>
+                <Dialog.Root>
+                  <Dialog.Trigger asChild>
+                    <motion.div
+                      className={styles.section__schedules__card__container}
+                      initial={schedulesCardAnimationInitial}
+                      whileInView="onScreen"
+                      variants={schedulesCardAnimationVariants}
+                      viewport={{ once: true }}
+                    >
+                      <Card.Root
+                        className={styles.section__schedules__card}
+                        aria-label="Ver horário das mil ave marias"
+                      >
+                        <Card.Icon
+                          src={MassIcon}
+                          alt="Horário das mil ave marias"
+                          loading="lazy"
+                        />
+                        <Typography>
+                          Mil Ave Marias
+                        </Typography>
+                      </Card.Root>
+
+                      <Card.RoundedDecoration
+                        className={styles.section__schedules__card__rounded__decoration}
+                      />
+                    </motion.div>
+                  </Dialog.Trigger>
+                  <Dialog.Portal>
+                    <Dialog.Overlay className={styles.section__schedules__dialog__overlay} />
+                    <Dialog.Content className={styles.section__schedules__dialog__content}>
+                      <Dialog.Title>Mil Ave Marias</Dialog.Title>
+                      <Dialog.Description>
+                        Venha interceder pelo nosso paróco e, também, por todas as suas intenções,
+                        rezando conosco as Mil Ave Marias.
+                      </Dialog.Description>
+                      <CommunitySchedules
+                        title="Horários"
+                        schedules={[{ weekday: '1º sábado do mês', time: '08:00' }]}
+                      />
+                      <DialogClose.DialogCloseTextButton />
+                      <DialogClose.DialogCloseIcon />
+                    </Dialog.Content>
+                  </Dialog.Portal>
+                </Dialog.Root>
+
+                <Dialog.Root>
+                  <Dialog.Trigger asChild>
+                    <motion.div
+                      className={styles.section__schedules__card__container}
+                      initial={schedulesCardAnimationInitial}
+                      whileInView="onScreen"
+                      variants={schedulesCardAnimationVariants}
+                      viewport={{ once: true }}
+                    >
+                      <Card.Root
+                        className={styles.section__schedules__card}
+                        aria-label="Ver horário de atendimento da secretaria"
+                      >
+                        <Card.Icon
+                          src={MassIcon}
+                          alt="Horário de atendimento da secretaria"
+                          loading="lazy"
+                        />
+                        <Typography>
+                          secretaria
+                        </Typography>
+                      </Card.Root>
+                      <Card.RoundedDecoration
+                        className={styles.section__schedules__card__rounded__decoration}
+                      />
+                    </motion.div>
+                  </Dialog.Trigger>
+                  <Dialog.Portal>
+                    <Dialog.Overlay className={styles.section__schedules__dialog__overlay} />
+                    <Dialog.Content className={styles.section__schedules__dialog__content}>
+                      <Dialog.Title>Secretária</Dialog.Title>
+                      <Dialog.Description>
+                        Na nossa secretária paroquial você pode tirar dúvidas, contribuir com o seu
+                        dízimo, agendar batizados e casamentos e muito mais.
+                      </Dialog.Description>
+
+                      <CommunitySchedules
+                        title="Horários"
+                        schedules={[
+                          { weekday: 'Segunda a Sexta', time: '08:00 às 17:00' },
+                          { weekday: 'Sábado', time: '08:00 às 14:00' }
+                        ]}
+                      />
+                      <DialogClose.DialogCloseTextButton />
+                      <DialogClose.DialogCloseIcon />
+                    </Dialog.Content>
+                  </Dialog.Portal>
+                </Dialog.Root>
               </motion.div>
             </div>
           </article>
@@ -374,9 +490,10 @@ export default function Home() {
                     />
 
                     <CommunitySchedules
+                      title="missas"
                       schedules={[
                         { weekday: 'Sexta-feira', time: '19:30' },
-                        { weekday: 'Domingo', time: '08:30' },
+                        { weekday: 'Domingo', time: '08:30' }
                       ]}
                     />
 
@@ -411,9 +528,10 @@ export default function Home() {
                     />
 
                     <CommunitySchedules
+                      title="Missas"
                       schedules={[
                         { weekday: 'Quarta-feira', time: '19:30' },
-                        { weekday: 'Sábado', time: '08:30' },
+                        { weekday: 'Sábado', time: '08:30' }
                       ]}
                     />
 
@@ -448,9 +566,10 @@ export default function Home() {
                     />
 
                     <CommunitySchedules
+                      title="missas"
                       schedules={[
                         { weekday: 'Quarta-feira', time: '19:30' },
-                        { weekday: 'Domingo', time: '08:30' },
+                        { weekday: 'Domingo', time: '08:30' }
                       ]}
                     />
 
@@ -485,9 +604,10 @@ export default function Home() {
                     />
 
                     <CommunitySchedules
+                      title="missas"
                       schedules={[
                         { weekday: 'Sexta-feira', time: '19:30' },
-                        { weekday: 'Domingo', time: '17:00' },
+                        { weekday: 'Domingo', time: '17:00' }
                       ]}
                     />
 
@@ -522,9 +642,10 @@ export default function Home() {
                     />
 
                     <CommunitySchedules
+                      title="missas"
                       schedules={[
                         { weekday: 'Sexta-feira', time: '19:30' },
-                        { weekday: 'Domingo', time: '08:30' },
+                        { weekday: 'Domingo', time: '08:30' }
                       ]}
                     />
 
