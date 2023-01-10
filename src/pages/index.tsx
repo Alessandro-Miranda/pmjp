@@ -7,6 +7,7 @@ import * as Accordion from '@radix-ui/react-accordion';
 import * as Dialog from '@radix-ui/react-dialog';
 import * as Separator from '@radix-ui/react-separator';
 
+import Arrow from '@Icons/arrow.svg';
 import Email from '@Icons/email.svg';
 import Location from '@Icons/location-white.svg';
 import MassIcon from '@Icons/mass.svg';
@@ -20,6 +21,7 @@ import WelcomedPastoral from '@Images/welcomed.jpg';
 
 import Address from '@Components/Address';
 import ArticleNumber from '@Components/ArticleNumber';
+import Button from '@Components/Button';
 import DialogClose from '@Components/DialogClose';
 import Logo from '@Components/Logo';
 import NavBar from '@Components/NavBar';
@@ -84,7 +86,25 @@ export default function Home() {
           className={styles.content__separator}
           orientation="horizontal"
         />
+
         <div className={styles.header__hero__container}>
+          <div
+            className={styles.header__hero__churchName}
+            aria-label="Nome por extenso da Paróquia Menino Jesus de Praga"
+          >
+            <Typography variant="span">
+              paróquia
+            </Typography>
+            <Typography variant="span">
+              menino
+            </Typography>
+            <Typography variant="span">
+              jesus
+            </Typography>
+            <Typography variant="span">
+              de praga
+            </Typography>
+          </div>
           <blockquote cite="https://twitter.com/pontifex_pt/status/417623614901334016">
             <Typography className={styles.header__hero__citation}>
               “ No rosto do
@@ -118,10 +138,26 @@ export default function Home() {
             className={styles.header__hero__banner}
           />
         </div>
+
+        <Button
+          handleClickFn={() => {
+            document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className={styles.header__seeMore__button}
+          ariaLabel="Veja mais informações sobre a paróquia"
+        >
+          <Image
+            src={Arrow}
+            alt="Ver mais informações"
+            aria-hidden
+          />
+          <Typography variant="span">conheça</Typography>
+        </Button>
       </header>
       <main>
         <section
           className={styles.section}
+          id="about"
           role="contentinfo"
           aria-label="Conheça nossa paróquia. História, horários de atividades e localização"
         >
