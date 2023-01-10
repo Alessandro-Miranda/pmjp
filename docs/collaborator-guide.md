@@ -29,7 +29,7 @@ npm run storybook
 npm run dev # em uma janela do terminal diferente para iniciar o servidor de desenvolvimento
 ```
 
-Isso iniciará o storybook e o servidor de desenvolvimento nos endereços `http://localhost:6006` e `http://localhost:3000`, respectivamente. As página possuem hot reload, então, a cada mudança no código, elas atualizaram automaticamente, mas, caso a página não atualize, basta excluir a pasta `.next` manualmente e reiniciar o servidor.
+Isso iniciará o storybook e o servidor de desenvolvimento nos endereços `http://localhost:6006` e `http://localhost:3000`, respectivamente. As página possuem hot reload, então, a cada mudança no código, será automaticamente refletido na interface, mas, caso a página não atualize, basta excluir a pasta `.next` manualmente e reiniciar o servidor.
 
 Para submeter uma nova feature ou corrigir bugs, o ideal é que você realize as alterações em uma branch separada, ex.: `git checkout -b feature/minhafeature`. Isto fará com que a submissão do seu pull request e merge da alteração sejam mais facéis.
 
