@@ -20,7 +20,7 @@ import WelcomedPastoral from '@Images/welcomed.jpg';
 
 import Address from '@Components/Address';
 import ArticleNumber from '@Components/ArticleNumber';
-import * as DialogClose from '@Components/DialogClose';
+import DialogClose from '@Components/DialogClose';
 import Logo from '@Components/Logo';
 import NavBar from '@Components/NavBar';
 import Typography from '@Components/Typography';
@@ -193,14 +193,8 @@ export default function Home() {
                         className={styles.section__schedules__card}
                         aria-label="Ver horário de missas e celebrações"
                       >
-                        <Card.Icon
-                          src={MassIcon}
-                          alt="Horário das missas"
-                          loading="lazy"
-                        />
-                        <Typography>
-                          missas
-                        </Typography>
+                        <Card.Icon src={MassIcon} alt="Horário das missas" loading="lazy" />
+                        <Typography>missas</Typography>
                       </Card.Root>
                       <Card.RoundedDecoration
                         className={styles.section__schedules__card__rounded__decoration}
@@ -226,8 +220,8 @@ export default function Home() {
                         ]}
                       />
 
-                      <DialogClose.DialogCloseTextButton />
-                      <DialogClose.DialogCloseIcon />
+                      <DialogClose type="text" />
+                      <DialogClose />
                     </Dialog.Content>
                   </Dialog.Portal>
                 </Dialog.Root>
@@ -245,14 +239,8 @@ export default function Home() {
                         className={styles.section__schedules__card}
                         aria-label="Ver horário do grupo de oração"
                       >
-                        <Card.Icon
-                          src={MassIcon}
-                          alt="Horário do grupo de oração"
-                          loading="lazy"
-                        />
-                        <Typography>
-                          grupo de oração
-                        </Typography>
+                        <Card.Icon src={MassIcon} alt="Horário do grupo de oração" loading="lazy" />
+                        <Typography>grupo de oração</Typography>
                       </Card.Root>
 
                       <Card.RoundedDecoration
@@ -273,8 +261,8 @@ export default function Home() {
                         schedules={[{ weekday: 'Terça-feira', time: '19:30' }]}
                       />
 
-                      <DialogClose.DialogCloseTextButton />
-                      <DialogClose.DialogCloseIcon />
+                      <DialogClose type="text" />
+                      <DialogClose />
                     </Dialog.Content>
                   </Dialog.Portal>
                 </Dialog.Root>
@@ -297,9 +285,7 @@ export default function Home() {
                           alt="Horário oração do santo terço"
                           loading="lazy"
                         />
-                        <Typography>
-                          Oração do Terço
-                        </Typography>
+                        <Typography>Oração do Terço</Typography>
                       </Card.Root>
 
                       <Card.RoundedDecoration
@@ -321,8 +307,8 @@ export default function Home() {
                           { weekday: 'Quarta-feira', time: '19:30' }
                         ]}
                       />
-                      <DialogClose.DialogCloseTextButton />
-                      <DialogClose.DialogCloseIcon />
+                      <DialogClose type="text" />
+                      <DialogClose />
                     </Dialog.Content>
                   </Dialog.Portal>
                 </Dialog.Root>
@@ -340,14 +326,8 @@ export default function Home() {
                         className={styles.section__schedules__card}
                         aria-label="Ver horário das mil ave marias"
                       >
-                        <Card.Icon
-                          src={MassIcon}
-                          alt="Horário das mil ave marias"
-                          loading="lazy"
-                        />
-                        <Typography>
-                          Mil Ave Marias
-                        </Typography>
+                        <Card.Icon src={MassIcon} alt="Horário das mil ave marias" loading="lazy" />
+                        <Typography>Mil Ave Marias</Typography>
                       </Card.Root>
 
                       <Card.RoundedDecoration
@@ -367,8 +347,8 @@ export default function Home() {
                         title="Horários"
                         schedules={[{ weekday: '1º sábado do mês', time: '08:00' }]}
                       />
-                      <DialogClose.DialogCloseTextButton />
-                      <DialogClose.DialogCloseIcon />
+                      <DialogClose type="text" />
+                      <DialogClose />
                     </Dialog.Content>
                   </Dialog.Portal>
                 </Dialog.Root>
@@ -391,9 +371,7 @@ export default function Home() {
                           alt="Horário de atendimento da secretaria"
                           loading="lazy"
                         />
-                        <Typography>
-                          secretaria
-                        </Typography>
+                        <Typography>secretaria</Typography>
                       </Card.Root>
                       <Card.RoundedDecoration
                         className={styles.section__schedules__card__rounded__decoration}
@@ -416,8 +394,8 @@ export default function Home() {
                           { weekday: 'Sábado', time: '08:00 às 14:00' }
                         ]}
                       />
-                      <DialogClose.DialogCloseTextButton />
-                      <DialogClose.DialogCloseIcon />
+                      <DialogClose type="text" />
+                      <DialogClose />
                     </Dialog.Content>
                   </Dialog.Portal>
                 </Dialog.Root>
